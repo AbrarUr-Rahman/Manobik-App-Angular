@@ -1,0 +1,14 @@
+<!-- layout.component.html -->
+
+<div class="layout-container">
+  <app-sidebar></app-sidebar>
+  <!-- Sidebar on the left -->
+  <div class="main-content">
+    <app-header [title]="'Organization List'"></app-header>
+    <!-- Header at the top -->
+    <div class="content-area">
+      <router-outlet></router-outlet>
+      <!-- Dynamic content area -->
+    </div>
+  </div>
+</div>
