@@ -1,0 +1,66 @@
+<!-- organization-list.component.html -->
+<div class="organization-list-container">
+  <!-- Header Section -->
+  <div class="header-section">
+    <div class="controls">
+      <input type="text" placeholder="Search..." class="search-input" />
+      <button class="filter-button">Filter</button>
+      <button class="create-button">+ Create Organization</button>
+    </div>
+  </div>
+
+  <!-- Organization Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Organization Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Head of the Organization</th>
+          <th>User Count</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Use *ngFor to iterate over the organizations array -->
+        <tr *ngFor="let org of organizations; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <div class="org-info">
+              <img
+                src="{{ org.logo }}"
+                alt="Organization Logo"
+                class="org-logo"
+              />
+              <span>{{ org.name }}</span>
+            </div>
+          </td>
+          <td>{{ org.email }}</td>
+          <td>{{ org.phone }}</td>
+          <td>{{ org.head }}</td>
+          <td>{{ org.userCount }}</td>
+          <td>
+            <button class="action-button">...</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button class="show-entries">Show 10</button>
+    <span>Showing 1 to 10 of 50 entries</span>
+    <div class="pagination-controls">
+      <button class="page-button">&lt;</button>
+      <button class="page-number active">1</button>
+      <button class="page-number">2</button>
+      <button class="page-number">3</button>
+      <span>...</span>
+      <button class="page-number">10</button>
+      <button class="page-button">&gt;</button>
+    </div>
+  </div>
+</div>

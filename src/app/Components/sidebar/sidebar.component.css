@@ -1,0 +1,44 @@
+/* sidebar.component.scss */
+.sidebar-container {
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+}
+
+.sidebar-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #333333;
+  text-decoration: none;
+}
+
+.nav-menu a i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background-color: #fff9fb;
+  color: #ff007b;
+  cursor: pointer;
+}/*# sourceMappingURL=sidebar.component.css.map */

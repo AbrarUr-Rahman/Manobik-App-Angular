@@ -1,0 +1,29 @@
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: #999999;
+    flex-direction: row;
+    gap: 70px;
+
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: #999999;
+        text-decoration: solid;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+}

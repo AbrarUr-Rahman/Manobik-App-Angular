@@ -1,15 +1,13 @@
-// organization-list.component.ts
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-organization-list',
+  selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule], // Import CommonModule to enable *ngFor
-  templateUrl: './organization-list.component.html',
-  styleUrls: ['./organization-list.component.scss']
+  imports: [],
+  templateUrl: './user-list.component.html',
+  styleUrl: './user-list.component.scss'
 })
-export class OrganizationListComponent {
+export class UserListComponent {
   organizations = [
     { name: 'Organization 1', email: 'Khalid@bracits.com', phone: '+880 1958674857', head: 'Khalid Mursalin', userCount: 7, logo: 'assets/logo1.png' },
     { name: 'Organization 2', email: 'Nahid@bracits.com', phone: '+880 1958674857', head: 'Nahid Ahmed', userCount: 10, logo: 'assets/logo2.png' },
