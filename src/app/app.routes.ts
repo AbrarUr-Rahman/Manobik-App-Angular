@@ -15,58 +15,29 @@ import { UserListComponent } from './Pages/user-list/user-list.component';
 // import { FiveWFormComponent } from './fivew-form/fivew-form.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { 
-        path: 'login', 
-        component: LoginSetPassComponent,
-        children: [
-          { path: '', component: LoginSetPassComponent },
-           {path:'success',component:LoginSuccessComponent},
-           {path:'forgot-pass',component:LoginForgotPassComponent},
-           {path:'check-mail',component:LoginCheckMailComponent},
-           {path:'sign-in',component:LoginSigninComponent}
-         
-        ]
-      },
-    {
-      path: '',
-      component: LayoutComponent,
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { 
+      path: 'login', 
+      component: LoginSetPassComponent,
       children: [
-        { path: 'organization', component: OrganizationListComponent },
-       
+        { path: '', component: LoginSetPassComponent },
+        { path: 'success', component: LoginSuccessComponent },
+        { path: 'forgot-pass', component: LoginForgotPassComponent },
+        { path: 'check-mail', component: LoginCheckMailComponent },
+        { path: 'sign-in', component: LoginSigninComponent }
       ]
-    },
-    {
-        path: '',
-        component: LayoutComponent,
-        children: [
-          { path: 'plan-list', component: PlanListComponent },
-         
-        ]
-      },
-      {
-        path: '',
-        component: LayoutComponent,
-        children: [
-          { path: 'fivew-form', component: FivewFormComponent },
-         
-        ]
-      },
-      {
-        path: '',
-        component: LayoutComponent,
-        children: [
-          { path: 'profile', component: ProfileComponent },
-         
-        ]
-      },
-      {
-        path: '',
-        component: LayoutComponent,
-        children: [
-          { path: 'user-list', component: UserListComponent },
-         
-        ]
-      },
-  ];
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: 'organization', component: OrganizationListComponent, data: { title: 'Organization List' } },
+      { path: 'plan-list', component: PlanListComponent, data: { title: 'Plan List' } },
+      { path: 'fivew-form', component: FivewFormComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'user-list', component: UserListComponent, data: { title: 'User List' } },
+    ]
+  },
+];
+
 

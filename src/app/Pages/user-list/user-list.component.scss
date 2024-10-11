@@ -1,5 +1,5 @@
-/* organization-list.component.scss */
-.organization-list-container {
+/* user-list.component.scss */
+.user-list-container {
     padding: 20px;
     font-family: Arial, sans-serif;
     color: #333;
@@ -78,11 +78,11 @@
                 background-color: #fff;
             }
 
-            .org-info {
+            .user-info {
                 display: flex;
                 align-items: center;
 
-                .org-logo {
+                .user-logo {
                     width: 24px;
                     height: 24px;
                     border-radius: 50%;

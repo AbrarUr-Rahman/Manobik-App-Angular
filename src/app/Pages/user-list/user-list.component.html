@@ -1,46 +1,44 @@
-<!-- organization-list.component.html -->
-<div class="organization-list-container">
+<!-- user-list.component.html -->
+<div class="user-list-container">
   <!-- Header Section -->
   <div class="header-section">
     <div class="controls">
       <input type="text" placeholder="Search..." class="search-input" />
       <button class="filter-button">Filter</button>
-      <button class="create-button">+ Create Organization</button>
+      <button class="create-button">+ Create User</button>
     </div>
   </div>
 
-  <!-- Organization Table -->
+  <!-- user Table -->
   <div class="table-container">
     <table>
       <thead>
         <tr>
           <th>No</th>
+          <th>User Name</th>
           <th>Organization Name</th>
+          <th>User Role</th>
+          <th>Designation</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>Head of the Organization</th>
-          <th>User Count</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Use *ngFor to iterate over the organizations array -->
-        <tr *ngFor="let org of organizations; let i = index">
+        <!-- Use *ngFor to iterate over the users array -->
+        <tr *ngFor="let user of users; let i = index">
           <td>{{ i + 1 }}</td>
           <td>
-            <div class="org-info">
-              <img
-                src="{{ org.logo }}"
-                alt="Organization Logo"
-                class="org-logo"
-              />
-              <span>{{ org.name }}</span>
+            <div class="user-info">
+              <img src="{{ user.logo }}" alt="user Logo" class="user-logo" />
+              <span>{{ user.name }}</span>
             </div>
           </td>
-          <td>{{ org.email }}</td>
-          <td>{{ org.phone }}</td>
-          <td>{{ org.head }}</td>
-          <td>{{ org.userCount }}</td>
+          <td>{{ user.orgname }}</td>
+          <td>{{ user.userRole }}</td>
+          <td>{{ user.designation }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
           <td>
             <button class="action-button">...</button>
           </td>

@@ -1,1 +1,63 @@
-<p>plan-list works!</p>
+<!-- user-list.component.html -->
+<div class="user-list-container">
+  <!-- Header Section -->
+  <div class="header-section">
+    <div class="controls">
+      <input type="text" placeholder="Search..." class="search-input" />
+      <button class="filter-button">Filter</button>
+      <button class="create-button">+ Submit Plan</button>
+    </div>
+  </div>
+
+  <!-- user Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Submitted By</th>
+
+          <th>Phone</th>
+          <th>Submitted On</th>
+          <th>Location</th>
+
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Use *ngFor to iterate over the users array -->
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <div class="user-info">
+              <img src="{{ user.logo }}" alt="user Logo" class="user-logo" />
+              <span>{{ user.name }}</span>
+            </div>
+          </td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.submission_date }}</td>
+          <td>{{ user.location }}</td>
+
+          <td>
+            <button class="action-button">...</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button class="show-entries">Show 10</button>
+    <span>Showing 1 to 10 of 50 entries</span>
+    <div class="pagination-controls">
+      <button class="page-button">&lt;</button>
+      <button class="page-number active">1</button>
+      <button class="page-number">2</button>
+      <button class="page-number">3</button>
+      <span>...</span>
+      <button class="page-number">10</button>
+      <button class="page-button">&gt;</button>
+    </div>
+  </div>
+</div>
