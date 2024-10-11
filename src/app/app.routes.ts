@@ -11,6 +11,7 @@ import { PlanListComponent } from './Pages/plan-list/plan-list.component';
 import { FivewFormComponent } from './Pages/fivew-form/fivew-form.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { UserListComponent } from './Pages/user-list/user-list.component';
+import { LoginLayoutComponent } from './Components/Login/login-layout/login-layout.component';
 
 // import { FiveWFormComponent } from './fivew-form/fivew-form.component';
 
@@ -18,7 +19,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { 
       path: 'login', 
-      component: LoginSetPassComponent,
+      component: LoginLayoutComponent,
       children: [
         { path: '', component: LoginSetPassComponent },
         { path: 'success', component: LoginSuccessComponent },

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeftSideComponent } from './left-side.component';
+import { LoginLeftsideComponent } from './login-leftside.component';
 
-describe('LeftSideComponent', () => {
-  let component: LeftSideComponent;
-  let fixture: ComponentFixture<LeftSideComponent>;
+describe('LoginLeftsideComponent', () => {
+  let component: LoginLeftsideComponent;
+  let fixture: ComponentFixture<LoginLeftsideComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LeftSideComponent]
+      imports: [LoginLeftsideComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LeftSideComponent);
+    fixture = TestBed.createComponent(LoginLeftsideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
