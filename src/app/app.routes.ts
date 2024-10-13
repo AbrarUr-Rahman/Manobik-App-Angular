@@ -13,6 +13,7 @@ import { ProfileComponent } from './Pages/profile/profile.component';
 import { UserListComponent } from './Pages/user-list/user-list.component';
 import { LoginLayoutComponent } from './Components/Login/login-layout/login-layout.component';
 import { TestLoginComponent } from './Pages/login/test-login/test-login.component';
+import { TestLayoutComponent } from './Pages/test-layout/test-layout.component';
 
 // import { FiveWFormComponent } from './fivew-form/fivew-form.component';
 
@@ -40,6 +41,7 @@ export const routes: Routes = [
       { path: 'fivew-form', component: FivewFormComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'user-list', component: UserListComponent, data: { title: 'User List' } },
+      {path:'test-layout',component:TestLayoutComponent}
     ]
   },
 ];

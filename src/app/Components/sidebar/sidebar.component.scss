@@ -1,4 +1,10 @@
 /* sidebar.component.scss */
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+    font-family: Inter;
+}
+
 .sidebar-container {
     width: 250px;
     height: 100vh;
@@ -8,6 +14,18 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
+    line-height: 18px;
+
+
+
+}
+
+.title {
+    padding: 0px 30px;
+    color: gray;
+    font-size: 14px;
+    //   width: 200px;
+    //     height: 18px;
 }
 
 .sidebar-logo {
@@ -26,15 +44,14 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    font-size: 1rem;
-    color: #333333;
+    font-size: 16px;
+    color: gray;
     text-decoration: none;
+    // height: 18px;
+    // width: 26px;
 }
 
-.nav-menu a i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
+
 
 .nav-menu a:hover,
 .nav-menu a.active {
