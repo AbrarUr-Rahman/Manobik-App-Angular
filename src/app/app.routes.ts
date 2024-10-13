@@ -12,6 +12,7 @@ import { FivewFormComponent } from './Pages/fivew-form/fivew-form.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { UserListComponent } from './Pages/user-list/user-list.component';
 import { LoginLayoutComponent } from './Components/Login/login-layout/login-layout.component';
+import { TestLoginComponent } from './Pages/login/test-login/test-login.component';
 
 // import { FiveWFormComponent } from './fivew-form/fivew-form.component';
 
@@ -21,11 +22,13 @@ export const routes: Routes = [
       path: 'login', 
       component: LoginLayoutComponent,
       children: [
+        
         { path: '', component: LoginSetPassComponent },
         { path: 'success', component: LoginSuccessComponent },
         { path: 'forgot-pass', component: LoginForgotPassComponent },
         { path: 'check-mail', component: LoginCheckMailComponent },
-        { path: 'sign-in', component: LoginSigninComponent }
+        { path: 'sign-in', component: LoginSigninComponent },
+         { path: 'test-login',component: TestLoginComponent }
       ]
   },
   {

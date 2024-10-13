@@ -1,73 +1,68 @@
 .login-layout-container {
     display: flex;
     height: 100vh;
-    /* Full viewport height */
+
     width: 100vw;
-    /* Full viewport width */
+
     overflow: hidden;
     position: relative;
-    /* Relative positioning for absolute positioning of children */
+
 }
 
 /* Left side: image and background */
 .left-side {
     width: 760px;
-    /* Fixed width as specified */
+
     height: 700px;
-    /* Fixed height as specified */
+
     position: absolute;
-    /* Use absolute positioning */
+
     top: 40px;
-    /* Positioned 40px from the top */
+
     left: 40px;
-    /* Positioned 40px from the left */
+
     border-radius: var(--radius-xl);
-    /* Rounded corners with specified variable */
+
     background-color: #ffe8f1;
-    /* Background color */
+
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* Ensure no overflow */
+
 }
 
 /* Right side: Form and content area */
 .right-side {
     width: 480px;
-    /* Fixed width for the form area */
+
     height: 944px;
-    /* Fixed height for the form area */
+
     position: absolute;
-    /* Use absolute positioning */
+
     top: 40px;
-    /* Positioned 40px from the top */
+
     left: 861px;
-    /* Positioned 861px from the left */
+
     display: flex;
     flex-direction: column;
-    /* Column layout to stack content vertically */
+
     justify-content: flex-start;
-    /* Start content at the top */
     align-items: center;
     /* Center content horizontally */
-    background-color: #ffffff;
+    // background-color: #ffffff;
     padding: 40px 20px;
-    /* Padding for internal content */
     // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    /* Shadow effect */
     border-radius: var(--radius-xl);
-    /* Rounded corners with specified variable */
     opacity: 1;
-    /* Ensure it is visible */
 }
 
-/* Style for the app-logo component */
 .logo {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 120px;
+    width: 138px;
+    height: 48px;
 }
 
 /* Form content */
@@ -84,12 +79,11 @@ ng-content {
 
 /* Footer styling */
 .footer {
-    margin-top: auto;
-    /* Push footer to the bottom */
+    top: 620px;
     display: block;
     width: 100%;
     text-align: center;
-
+    position: absolute;
     color: #999;
     // margin-bottom: 280px;
 }
