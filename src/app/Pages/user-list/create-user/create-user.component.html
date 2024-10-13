@@ -1,0 +1,52 @@
+<!-- create-user.component.html -->
+<div class="create-user-container">
+  <h2 class="form-title">Create User</h2>
+  <div class="form-card">
+    <form>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="organization">Organization</label>
+          <select id="organization" name="organization">
+            <option value="">Select</option>
+            <option value="brac">BRAC</option>
+            <option value="xyz">XYZ</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="user-role">User Role</label>
+          <select id="user-role" name="user-role">
+            <option value="">Select</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="designation">Designation</label>
+          <input type="text" id="designation" placeholder="Designation" />
+        </div>
+
+        <div class="form-group">
+          <label for="username">User Name</label>
+          <input type="text" id="username" placeholder="User name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone No.</label>
+          <input type="text" id="phone" placeholder="Phone no." />
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="cancel-button">Cancel</button>
+        <button type="submit" class="save-button">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.plan-details-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.input-box label {
+    font-size: 0.875rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.input-box p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.cancel {
+    background-color: #f3f3f3;
+    color: #555;
+}
+
+.btn.edit {
+    background-color: #ff007b;
+    color: white;
+}
