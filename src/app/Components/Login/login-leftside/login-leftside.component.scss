@@ -5,15 +5,15 @@
     align-items: left;
     justify-content: center;
     position: relative;
-    height: 730px;
-    width: 500px;
+    height: 944px;
+    width: 760px;
     border-radius: var(--radius-xl);
     margin-left: 40px;
-
+    overflow: hidden;
     .background-image {
         width: 100%;
         height: auto;
-        object-fit: cover;
+        object-fit: fill;
         border-radius: var(--radius-xl);
     }
 }
