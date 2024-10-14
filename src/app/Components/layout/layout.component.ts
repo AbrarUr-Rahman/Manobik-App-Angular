@@ -13,7 +13,7 @@ import { filter, map } from 'rxjs/operators';
   imports: [RouterModule, HeaderComponent, SidebarComponent]
 })
 export class LayoutComponent implements OnInit {
-  title: string = 'Organization List'; // Title to be displayed
+  title: string = 'User List'; // Title to be displayed
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 

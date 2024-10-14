@@ -1,0 +1,5 @@
+Work done for today:
+1.Created most of the components & pages
+2. Implemented navigation between pages
+3. Created filter modal 
+
