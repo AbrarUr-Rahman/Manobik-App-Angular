@@ -1,11 +1,12 @@
 // organization-list.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-organization-list',
   standalone: true,
-  imports: [CommonModule], // Import CommonModule to enable *ngFor
+  imports: [CommonModule,FormsModule], // Import CommonModule to enable *ngFor
   templateUrl: './organization-list.component.html',
   styleUrls: ['./organization-list.component.scss']
 })
@@ -22,4 +23,37 @@ export class OrganizationListComponent {
     { name: 'Organization 9', email: 'Samsad@bracits.com', phone: '+880 1958674857', head: 'Samsad', userCount: 2, logo: 'assets/images/org-logo.png' },
     { name: 'Organization 10', email: 'Faruque@bracits.com', phone: '+880 1958674857', head: 'Faruque Simanta', userCount: 1, logo: 'assets/images/org-logo.png' },
   ];
+   // Filter-related properties
+   searchTerm: string = '';
+   headFilter: string = '';
+   emailFilter: string = '';
+   isFilterVisible: boolean = false;
+ 
+   // Method to toggle filter visibility
+   toggleFilter() {
+     this.isFilterVisible = !this.isFilterVisible;
+   }
+ 
+   // Method to apply filters
+   applyFilters() {
+     this.isFilterVisible = false;
+   }
+ 
+   // Method to clear filters
+   clearFilters() {
+     this.headFilter = '';
+     this.emailFilter = '';
+     this.searchTerm = '';
+   }
+ 
+   // Method to filter organizations based on user input
+   filteredOrganizations() {
+     return this.organizations.filter(org => {
+       return (
+         (!this.searchTerm || org.name.toLowerCase().includes(this.searchTerm.toLowerCase())) &&
+         (!this.headFilter || org.head === this.headFilter) &&
+         (!this.emailFilter || org.email === this.emailFilter)
+       );
+     });
+   }
 }

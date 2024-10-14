@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-fivew-form',
   standalone: true,
@@ -8,6 +9,10 @@ import { CommonModule, NgFor } from '@angular/common';
   styleUrl: './fivew-form.component.scss'
 })
 export class FivewFormComponent {
+  constructor (private router:Router){};
+  submitForm(){
+    this.router.navigate(['/fivew-form/create-form'])
+}
   users = [
     { name: 'Khalid',orgname:"BracIt", userRole: 'Software Engineer', designation:"Engineer",email: 'Khalid@bracits.com',phone: '+880 1958674857', head: 'Khalid Mursalin', userCount: 7, logo: 'assets/images/user-avatar.png' },
     { name: 'Nahid ',orgname:"BracIt", userRole: 'Software Engineer', designation:"Engineer",email: 'Nahid@bracits.com',phone: '+880 1958674857', head: 'Nahid Ahmed', userCount: 10, logo: 'assets/images/user-avatar.png' },
@@ -20,4 +25,5 @@ export class FivewFormComponent {
     { name: 'Samsad ',orgname:"BracIt", userRole: 'Software Engineer',designation:"Engineer", email: 'Samsad@bracits.com',phone: '+880 1958674857', head: 'Samsad', userCount: 2, logo: 'assets/images/user-avatar.png' },
     { name: 'Faruque ',orgname:"BracIt", userRole: 'Software Engineer',designation:"Engineer",  email: 'Faruque@bracits.com',phone: '+880 1958674857', head: 'Faruque Simanta', userCount: 1, logo:'assets/images/user-avatar.png' },
   ];
+
 }

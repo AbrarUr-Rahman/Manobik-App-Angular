@@ -1,17 +1,35 @@
-.header-container {
-    display: flex;
-    flex-direction: column; /* Stack title and header actions vertically */
-    padding: 10px 20px;
-    background-color: #ffffff;
-    margin-right: 24px;
-    gap: 10px; /* Adjust spacing between the title and header actions */
+/* header.component.scss */
+@import url(https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:200,300,regular,500,600,700,800,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+
+* {
+    font-family: "Plus Jakarta Sans";
 }
 
-.title-container {
-    text-align: left;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 24px;
+    gap: 40px;
+    // .right-side {
+    //     margin-right: 10px;
+    // }
+}
+
+
+p {
+    font-weight: 600;
+    width: 61px;
+    height: 22px;
+
 }
 
 .page-title {
+    flex: 1;
+    text-align: left;
     font-size: 1.5rem;
     font-weight: bold;
     color: #333333;
@@ -20,13 +38,25 @@
 .header-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align actions to the right */
     gap: 15px;
+}
+
+.search-bar {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .search-icon {
     height: 24px;
     width: 24px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
 .profile-icon {

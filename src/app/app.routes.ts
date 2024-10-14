@@ -73,6 +73,7 @@ import { PlanDetailsComponent } from './Pages/plan-list/plan-details/plan-detail
 import { UserDetailsComponent } from './Pages/user-list/user-details/user-details.component';
 import { ResetPassComponent } from './Pages/user-list/reset-pass/reset-pass.component';
 import { DownAppComponent } from './Pages/login/down-app/down-app.component';
+import { CreateFormComponent } from './Pages/fivew-form/create-form/create-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -124,11 +125,13 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '',
+    path: 'fivew-form',
     component: LayoutComponent,
     children: [
-      { path: 'fivew-form', component: FivewFormComponent },
+      { path: '', component: FivewFormComponent },
+      { path: 'create-form', component: CreateFormComponent },
       { path: 'test-layout', component: TestLayoutComponent }
     ]
-  }
+  },
+ 
 ];

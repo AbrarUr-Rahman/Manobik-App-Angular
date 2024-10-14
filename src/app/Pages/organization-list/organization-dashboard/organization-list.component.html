@@ -1,12 +1,32 @@
-<!-- organization-list.component.html -->
 <div class="organization-list-container">
   <!-- Header Section -->
   <div class="header-section">
     <div class="controls">
-      <input type="text" placeholder="Search..." class="search-input" />
-      <button class="filter-button">Filter</button>
+      <input type="text" placeholder="Search..." class="search-input" [(ngModel)]="searchTerm" />
+      <button class="filter-button" (click)="toggleFilter()">Filter</button>
       <button class="create-button">+ Create Organization</button>
     </div>
+  </div>
+
+  <!-- Filter PopUP -->
+  <div class="filter-modal" [ngClass]="{'active': isFilterVisible}">
+    <h3>Filter Organizations</h3>
+    <div class="filter-group">
+      <label for="headFilter">Head of Organization</label>
+      <select id="headFilter" [(ngModel)]="headFilter">
+        <option value="">All</option>
+        <option *ngFor="let org of organizations" [value]="org.head">{{ org.head }}</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="emailFilter">Email</label>
+      <select id="emailFilter" [(ngModel)]="emailFilter">
+        <option value="">All</option>
+        <option *ngFor="let org of organizations" [value]="org.email">{{ org.email }}</option>
+      </select>
+    </div>
+    <button class="apply-button" (click)="applyFilters()">Apply</button>
+    <button class="clear-button" (click)="clearFilters()">Clear All</button>
   </div>
 
   <!-- Organization Table -->
@@ -24,16 +44,12 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Use *ngFor to iterate over the organizations array -->
-        <tr *ngFor="let org of organizations; let i = index">
+        <!-- Use *ngFor to iterate over the filtered organizations array -->
+        <tr *ngFor="let org of filteredOrganizations(); let i = index">
           <td>{{ i + 1 }}</td>
           <td>
             <div class="org-info">
-              <img
-                src="{{ org.logo }}"
-                alt="Organization Logo"
-                class="org-logo"
-              />
+              <img src="{{ org.logo }}" alt="Organization Logo" class="org-logo" />
               <span>{{ org.name }}</span>
             </div>
           </td>
@@ -41,26 +57,15 @@
           <td>{{ org.phone }}</td>
           <td>{{ org.head }}</td>
           <td>{{ org.userCount }}</td>
-          <td>
-            <button class="action-button">...</button>
-          </td>
+          <td><button class="action-button">...</button></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Pagination -->
+  <!-- Pagination (if necessary) -->
   <div class="pagination">
     <button class="show-entries">Show 10</button>
-    <span>Showing 1 to 10 of 50 entries</span>
-    <div class="pagination-controls">
-      <button class="page-button">&lt;</button>
-      <button class="page-number active">1</button>
-      <button class="page-number">2</button>
-      <button class="page-number">3</button>
-      <span>...</span>
-      <button class="page-number">10</button>
-      <button class="page-button">&gt;</button>
-    </div>
+    <span>Showing 1 to 10 of {{ filteredOrganizations().length }} entries</span>
   </div>
 </div>
