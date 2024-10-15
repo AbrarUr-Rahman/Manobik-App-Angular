@@ -13,7 +13,7 @@ import { filter, map } from 'rxjs/operators';
   imports: [RouterModule, HeaderComponent, SidebarComponent]
 })
 export class LayoutComponent implements OnInit {
-  title: string = 'User List'; // Title to be displayed
+  title: string = 'Default List'; // Title to be displayed
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -37,6 +37,8 @@ export class LayoutComponent implements OnInit {
       .subscribe((title: string | undefined) => {
         console.log('Current Title:', title); // Log the current title
         this.title = title || 'Default Title'; // Set title or fallback
+        
       });
+      
   }
 }

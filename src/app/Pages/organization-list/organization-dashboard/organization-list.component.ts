@@ -1,4 +1,3 @@
-// organization-list.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-organization-list',
   standalone: true,
-  imports: [CommonModule,FormsModule], // Import CommonModule to enable *ngFor
+  imports: [CommonModule, FormsModule], // Import CommonModule to enable *ngFor
   templateUrl: './organization-list.component.html',
   styleUrls: ['./organization-list.component.scss']
 })
@@ -23,37 +22,68 @@ export class OrganizationListComponent {
     { name: 'Organization 9', email: 'Samsad@bracits.com', phone: '+880 1958674857', head: 'Samsad', userCount: 2, logo: 'assets/images/org-logo.png' },
     { name: 'Organization 10', email: 'Faruque@bracits.com', phone: '+880 1958674857', head: 'Faruque Simanta', userCount: 1, logo: 'assets/images/org-logo.png' },
   ];
-   // Filter-related properties
-   searchTerm: string = '';
-   headFilter: string = '';
-   emailFilter: string = '';
-   isFilterVisible: boolean = false;
- 
-   // Method to toggle filter visibility
-   toggleFilter() {
-     this.isFilterVisible = !this.isFilterVisible;
-   }
- 
-   // Method to apply filters
-   applyFilters() {
-     this.isFilterVisible = false;
-   }
- 
-   // Method to clear filters
-   clearFilters() {
-     this.headFilter = '';
-     this.emailFilter = '';
-     this.searchTerm = '';
-   }
- 
-   // Method to filter organizations based on user input
-   filteredOrganizations() {
-     return this.organizations.filter(org => {
-       return (
-         (!this.searchTerm || org.name.toLowerCase().includes(this.searchTerm.toLowerCase())) &&
-         (!this.headFilter || org.head === this.headFilter) &&
-         (!this.emailFilter || org.email === this.emailFilter)
-       );
-     });
-   }
+
+  // Filter-related properties
+  searchTerm: string = '';
+  headFilter: string = '';
+  emailFilter: string = '';
+  isFilterVisible: boolean = false;
+
+  // Property to track which action menu is open
+  actionMenuIndex: number | null = null;
+
+  // Method to toggle filter visibility
+  toggleFilter() {
+    this.isFilterVisible = !this.isFilterVisible;
+  }
+
+  // Method to apply filters
+  applyFilters() {
+    this.isFilterVisible = false;
+  }
+
+  // Method to clear filters
+  clearFilters() {
+    this.headFilter = '';
+    this.emailFilter = '';
+    this.searchTerm = '';
+  }
+
+  // Method to filter organizations based on user input
+  filteredOrganizations() {
+    return this.organizations.filter(org => {
+      return (
+        (!this.searchTerm || org.name.toLowerCase().includes(this.searchTerm.toLowerCase())) &&
+        (!this.headFilter || org.head === this.headFilter) &&
+        (!this.emailFilter || org.email === this.emailFilter)
+      );
+    });
+  }
+
+  // Method to toggle the action menu
+  toggleActionMenu(index: number) {
+    if (this.actionMenuIndex === index) {
+      this.actionMenuIndex = null; // Close the menu if clicked again
+    } else {
+      this.actionMenuIndex = index; // Open the menu for this row
+    }
+  }
+
+  // Placeholder method for viewing details
+  viewDetails(org: any) {
+    console.log('Viewing details for', org);
+    this.actionMenuIndex = null; // Close the menu after action
+  }
+
+  // Placeholder method for editing organization
+  editOrganization(org: any) {
+    console.log('Editing organization', org);
+    this.actionMenuIndex = null; // Close the menu after action
+  }
+
+  // Placeholder method for deleting organization
+  // deleteOrganization(org: any) {
+  //   console.log('Deleting organization', org);
+  //   this.actionMenuIndex = null; // Close the menu after action
+  // }
 }

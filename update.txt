@@ -1,5 +1,13 @@
+14/10/2024
+
 Work done for today:
 1.Created most of the components & pages
 2. Implemented navigation between pages
 3. Created filter modal 
 
+15/10/2024
+Work done for today:
+1. Added button components
+2. Added click functionality on dots
+3. Added & Working on responsive utility classes 
+4. Added & Working on  services & pipeline for dynamic page title 

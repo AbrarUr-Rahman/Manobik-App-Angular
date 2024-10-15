@@ -1,47 +1,7 @@
 <!--!TailWInd  -->
 <div class="p-5 text-gray-800">
-  <!-- Header Section -->
-  <div class="flex justify-end items-center mb-5">
-    <div class="flex items-center gap-2">
-      <input
-        type="text"
-        placeholder="Search..."
-        class="p-2 border border-gray-300 rounded-lg"
-        [(ngModel)]="searchTerm"
-      />
-      <button class="bg-gray-100 text-gray-600 font-bold py-2 px-4 rounded-lg" (click)="toggleFilter()">
-        Filter
-      </button>
-      <button class="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg">
-        + Create Organization
-      </button>
-    </div>
-  </div>
+  <!-- Existing Code for the Table ... -->
 
-  <!-- Filter PopUP -->
-  <div class="absolute top-20 right-5 w-72 p-5 bg-white shadow-lg rounded-xl z-50" [ngClass]="{'block': isFilterVisible, 'hidden': !isFilterVisible}">
-    <h3 class="text-lg font-semibold mb-5">Filter Organizations</h3>
-    <div class="mb-4">
-      <label for="headFilter" class="font-medium mb-1 block">Head of Organization</label>
-      <select id="headFilter" class="w-full p-2 border border-gray-300 rounded-md" [(ngModel)]="headFilter">
-        <option value="">All</option>
-        <option *ngFor="let org of organizations" [value]="org.head">{{ org.head }}</option>
-      </select>
-    </div>
-    <div class="mb-4">
-      <label for="emailFilter" class="font-medium mb-1 block">Email</label>
-      <select id="emailFilter" class="w-full p-2 border border-gray-300 rounded-md" [(ngModel)]="emailFilter">
-        <option value="">All</option>
-        <option *ngFor="let org of organizations" [value]="org.email">{{ org.email }}</option>
-      </select>
-    </div>
-    <div class="flex gap-2">
-      <button class="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg" (click)="applyFilters()">Apply</button>
-      <button class="bg-gray-100 text-gray-600 font-bold py-2 px-4 rounded-lg" (click)="clearFilters()">Clear All</button>
-    </div>
-  </div>
-
-  <!-- Organization Table -->
   <div class="overflow-hidden shadow-lg rounded-xl mb-5">
     <table class="w-full text-left border-collapse">
       <thead>
@@ -68,20 +28,35 @@
           <td class="p-3">{{ org.phone }}</td>
           <td class="p-3">{{ org.head }}</td>
           <td class="p-3">{{ org.userCount }}</td>
-          <td class="p-3">
-            <button class="text-lg text-gray-500 hover:text-gray-700">...</button>
+          <td class="p-3 relative">
+            <button class="text-lg text-gray-500 hover:text-gray-700" (click)="toggleActionMenu(i)">...</button>
+
+            <!-- Action Menu -->
+            <div *ngIf="actionMenuIndex === i" class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48">
+              <ul class="text-sm">
+                <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="viewDetails(org)">
+                  <img src="../../../../assets/images/eye.png" alt="View Icon" class="w-4 h-4 mr-2" />
+                  <span>View Details</span>
+                </li>
+                <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="editOrganization(org)">
+                  <img src="../../../../assets/images/pen.png" alt="Edit Icon" class="w-4 h-4 mr-2" />
+                  <span>Edit</span>
+                </li>
+                <!-- <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="deleteOrganization(org)">
+                  <img src="assets/icons/delete-icon.png" alt="Delete Icon" class="w-4 h-4 mr-2" />
+                  <span>Delete</span>
+                </li> -->
+              </ul>
+            </div>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Pagination -->
-  <div class="flex justify-between items-center">
-    <button class="py-1 px-3 bg-gray-100 rounded-lg">Show 10</button>
-    <span class="text-sm text-gray-500">Showing 1 to 10 of {{ filteredOrganizations().length }} entries</span>
-  </div>
+  <!-- Pagination and other existing elements ... -->
 </div>
+
 
 <!--!TailWInd  -->
 <!-- <div class="organization-list-container"> -->

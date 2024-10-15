@@ -81,21 +81,20 @@ export const routes: Routes = [
     path: 'login', 
     component: LoginLayoutComponent,
     children: [
-      { path: '', component: LoginSetPassComponent },
-      { path: 'success', component: LoginSuccessComponent },
-      { path: 'forgot-pass', component: LoginForgotPassComponent },
-      { path: 'check-mail', component: LoginCheckMailComponent },
-      { path: 'sign-in', component: LoginSigninComponent },
-      { path: 'down-app', component: DownAppComponent },
-      { path: 'test-login', component: TestLoginComponent }
+      { path: '', component: LoginSetPassComponent, data: { title: 'Set Password' } },
+      { path: 'success', component: LoginSuccessComponent, data: { title: 'Login Success' } },
+      { path: 'forgot-pass', component: LoginForgotPassComponent, data: { title: 'Forgot Password' } },
+      { path: 'check-mail', component: LoginCheckMailComponent, data: { title: 'Check Mail' } },
+      { path: 'sign-in', component: LoginSigninComponent, data: { title: 'Sign In' } },
+      { path: 'down-app', component: DownAppComponent, data: { title: 'Download App' } },
+      { path: 'test-login', component: TestLoginComponent, data: { title: 'Test Login' } }
     ]
   },
   {
     path: 'organization',
     component: LayoutComponent,
     children: [
-      { path: '', component: OrganizationListComponent, data: { title: 'Organization List' } },
-  
+      { path: '', component: OrganizationListComponent, data: { title: 'Organization List' } }
     ]
   },
   {
@@ -103,15 +102,14 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: PlanListComponent, data: { title: 'Plan List' } },
-      {path:'details',component:PlanDetailsComponent,data:{title:'Plan Details'}}
+      { path: 'details', component: PlanDetailsComponent, data: { title: 'Plan Details' } }
     ]
   },
   {
     path: 'profile',
     component: LayoutComponent,
     children: [
-      { path: '', component: ProfileComponent, data: { title: 'Profile' } },
-   
+      { path: '', component: ProfileComponent, data: { title: 'Profile' } }
     ]
   },
   {
@@ -119,19 +117,19 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: UserListComponent, data: { title: 'User List' } },
-      { path: 'create-user', component: CreateUserComponent },
-      { path: 'details', component: UserDetailsComponent },
-      { path: 'reset-pass', component: ResetPassComponent }
+      { path: 'create-user', component: CreateUserComponent, data: { title: 'Create User' } },
+      { path: 'details', component: UserDetailsComponent, data: { title: 'User Details' } },
+      { path: 'reset-pass', component: ResetPassComponent, data: { title: 'Reset Password' } }
     ]
   },
   {
     path: 'fivew-form',
     component: LayoutComponent,
     children: [
-      { path: '', component: FivewFormComponent },
-      { path: 'create-form', component: CreateFormComponent },
-      { path: 'test-layout', component: TestLayoutComponent }
+      { path: '', component: FivewFormComponent, data: { title: 'Five W Form' } },
+      { path: 'create-form', component: CreateFormComponent, data: { title: 'Create Form' } },
+      { path: 'test-layout', component: TestLayoutComponent, data: { title: 'Test Layout' } }
     ]
-  },
- 
+  }
 ];
+
