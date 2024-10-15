@@ -1,67 +1,67 @@
-/* profile.component.scss */
-.profile-container {
-    max-width: 900px;
-    margin: 0 auto;
-    // padding: 2rem;
-    background-color: #f9f9f9;
-}
+// /* profile.component.scss */
+// .profile-container {
+//     max-width: 900px;
+//     margin: 0 auto;
+//     //# padding: 2rem;
+//     background-color: #f9f9f9;
+// }
 
-.profile-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
+// .profile-header {
+//     display: flex;
+//     align-items: center;
+//     gap: 1.5rem;
+//     margin-bottom: 2rem;
+// }
 
-.profile-picture {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+// .profile-picture {
+//     width: 120px;
+//     height: 120px;
+//     border-radius: 50%;
+//     object-fit: cover;
+// }
 
-.profile-info {
-    .profile-name {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #333;
-        margin: 0;
-    }
+// .profile-info {
+//     .profile-name {
+//         font-size: 2rem;
+//         font-weight: 700;
+//         color: #333;
+//         margin: 0;
+//     }
 
-    .profile-role {
-        font-size: 1rem;
-        color: #777;
-    }
-}
+//     .profile-role {
+//         font-size: 1rem;
+//         color: #777;
+//     }
+// }
 
-/* Profile details with grid layout */
-.profile-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
+// /* Profile details with grid layout */
+// .profile-details {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+//     gap: 1.5rem;
 
-    .profile-detail {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 1rem;
-        text-align: center;
+//     .profile-detail {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: #ffffff;
+//         border: 1px solid #e0e0e0;
+//         border-radius: 8px;
+//         padding: 1rem;
+//         text-align: center;
 
-        .label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #999;
-            margin-bottom: 0.3rem;
-        }
+//         .label {
+//             font-size: 0.9rem;
+//             font-weight: 500;
+//             color: #999;
+//             margin-bottom: 0.3rem;
+//         }
 
-        .value {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-        }
-    }
-}
+//         .value {
+//             font-size: 1.2rem;
+//             font-weight: 600;
+//             color: #333;
+//         }
+//     }
+// }

@@ -1,61 +1,61 @@
-/* sidebar.component.scss */
-@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+// /* sidebar.component.scss */
+// @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
-* {
-    font-family: Inter;
-}
+// * {
+//     font-family: Inter;
+// }
 
-.sidebar-container {
-    width: 250px;
-    height: 100vh;
-    background-color: #fff;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    line-height: 18px;
-
-
-
-}
-
-.title {
-    padding: 0px 30px;
-    color: gray;
-    font-size: 14px;
-    //   width: 200px;
-    //     height: 18px;
-}
-
-.sidebar-logo {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-left: 20px;
-}
-
-.nav-menu a {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: gra;
-    text-decoration: none;
-    // height: 18px;
-    // width: 26px;
-}
+// .sidebar-container {
+//     width: 250px;
+//     height: 100vh;
+//     background-color: #fff;
+//     padding-top: 20px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     position: fixed;
+//     line-height: 18px;
 
 
 
-.nav-menu a:hover,
-.nav-menu a.active {
-    background-color: #fff9fb;
-    color: #ff007b;
-    cursor: pointer;
-}
+// }
+
+// .title {
+//     padding: 0px 30px;
+//     color: gray;
+//     font-size: 14px;
+//     //   width: 200px;
+//     //     height: 18px;
+// }
+
+// .sidebar-logo {
+//     width: 100px;
+//     margin-bottom: 20px;
+// }
+
+// .nav-menu {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     padding-left: 20px;
+// }
+
+// .nav-menu a {
+//     display: flex;
+//     align-items: center;
+//     padding: 10px 20px;
+//     font-size: 16px;
+//     color: gra;
+//     text-decoration: none;
+//     // height: 18px;
+//     // width: 26px;
+// }
+
+
+
+// .nav-menu a:hover,
+// .nav-menu a.active {
+//     background-color: #fff9fb;
+//     color: #ff007b;
+//     cursor: pointer;
+// }

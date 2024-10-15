@@ -1,91 +1,91 @@
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-}
+// body {
+//     font-family: Arial, sans-serif;
+//     color: #333;
+// }
 
-.reset-password-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-}
+// .reset-password-container {
+//     max-width: 1000px;
+//     margin: 0 auto;
+//     padding: 20px;
+//     background-color: #f9f9f9;
+// }
 
-.title {
-    font-size: 1.75rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
-}
+// .title {
+//     font-size: 1.75rem;
+//     font-weight: bold;
+//     margin-bottom: 20px;
+//     text-align: left;
+// }
 
-.form-section {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
+// .form-section {
+//     background: #fff;
+//     padding: 20px;
+//     border-radius: 8px;
+//     margin-bottom: 20px;
+// }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
+// .grid {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//     gap: 15px;
+// }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
+// .form-group {
+//     display: flex;
+//     flex-direction: column;
+// }
 
-.form-group label {
-    font-size: 0.875rem;
-    color: #888;
-    margin-bottom: 5px;
-}
+// .form-group label {
+//     font-size: 0.875rem;
+//     color: #888;
+//     margin-bottom: 5px;
+// }
 
-.password-input {
-    position: relative;
-}
+// .password-input {
+//     position: relative;
+// }
 
-.password-input input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
+// .password-input input {
+//     width: 100%;
+//     padding: 10px;
+//     border: 1px solid #ddd;
+//     border-radius: 5px;
+//     font-size: 1rem;
+// }
 
-.password-input .toggle-visibility {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-}
+// .password-input .toggle-visibility {
+//     position: absolute;
+//     right: 10px;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     cursor: pointer;
+//     color: #aaa;
+// }
 
-.footer-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
+// .footer-buttons {
+//     display: flex;
+//     justify-content: flex-end;
+//     gap: 10px;
+// }
 
-.cancel-button {
-    padding: 10px 20px;
-    background-color: #f3f3f3;
-    color: #555;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-}
+// .cancel-button {
+//     padding: 10px 20px;
+//     background-color: #f3f3f3;
+//     color: #555;
+//     border: none;
+//     border-radius: 5px;
+//     font-size: 1rem;
+//     font-weight: bold;
+//     cursor: pointer;
+// }
 
-.save-button {
-    padding: 10px 20px;
-    background-color: #ff007b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-}
+// .save-button {
+//     padding: 10px 20px;
+//     background-color: #ff007b;
+//     color: white;
+//     border: none;
+//     border-radius: 5px;
+//     font-size: 1rem;
+//     font-weight: bold;
+//     cursor: pointer;
+// }

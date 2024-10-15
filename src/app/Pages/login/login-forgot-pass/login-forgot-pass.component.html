@@ -1,4 +1,34 @@
-<div class="forgot-pass-container">
+<!--! TailWind  -->
+<div class="flex flex-col items-center justify-center w-full h-screen p-5 box-border">
+  <div class="flex flex-col items-center w-full max-w-md p-10 bg-white border border-gray-300 rounded-2xl text-center">
+      <img
+          src="../../../../assets/images/search-icon.png"
+          alt="Search Icon"
+          class="w-14 h-14 mb-5"
+      />
+      <h2 class="text-2xl font-semibold text-gray-800 mb-2">Forgot password?</h2>
+      <p class="text-base text-gray-600 mb-5">No worries, we’ll send you reset instructions.</p>
+      <form class="w-full flex flex-col gap-4">
+          <div class="w-full text-left">
+              <label for="email" class="text-sm text-gray-600 mb-1 block">Email</label>
+              <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                  class="w-full p-3 border border-gray-300 rounded-md text-base box-border"
+              />
+          </div>
+          <button type="submit" class="w-full p-3 bg-pink-600 text-white text-base font-bold rounded-md transition duration-300 hover:bg-pink-500">
+              Reset password
+          </button>
+      </form>
+      <a href="#" class="block mt-5 text-gray-600 text-sm hover:underline">← Back to log in</a>
+  </div>
+</div>
+
+<!--! TailWind  -->
+<!-- <div class="forgot-pass-container">
   <div class="forgot-pass-content">
     <img
       src="../../../../assets/images/search-icon.png"
@@ -21,4 +51,4 @@
     </form>
     <a href="#" class="back-link">← Back to log in</a>
   </div>
-</div>
+</div> -->

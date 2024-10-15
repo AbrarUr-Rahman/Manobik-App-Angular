@@ -1,15 +1,101 @@
-<div class="organization-list-container">
+<!--!TailWInd  -->
+<div class="p-5 text-gray-800">
   <!-- Header Section -->
-  <div class="header-section">
+  <div class="flex justify-end items-center mb-5">
+    <div class="flex items-center gap-2">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="p-2 border border-gray-300 rounded-lg"
+        [(ngModel)]="searchTerm"
+      />
+      <button class="bg-gray-100 text-gray-600 font-bold py-2 px-4 rounded-lg" (click)="toggleFilter()">
+        Filter
+      </button>
+      <button class="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg">
+        + Create Organization
+      </button>
+    </div>
+  </div>
+
+  <!-- Filter PopUP -->
+  <div class="absolute top-20 right-5 w-72 p-5 bg-white shadow-lg rounded-xl z-50" [ngClass]="{'block': isFilterVisible, 'hidden': !isFilterVisible}">
+    <h3 class="text-lg font-semibold mb-5">Filter Organizations</h3>
+    <div class="mb-4">
+      <label for="headFilter" class="font-medium mb-1 block">Head of Organization</label>
+      <select id="headFilter" class="w-full p-2 border border-gray-300 rounded-md" [(ngModel)]="headFilter">
+        <option value="">All</option>
+        <option *ngFor="let org of organizations" [value]="org.head">{{ org.head }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label for="emailFilter" class="font-medium mb-1 block">Email</label>
+      <select id="emailFilter" class="w-full p-2 border border-gray-300 rounded-md" [(ngModel)]="emailFilter">
+        <option value="">All</option>
+        <option *ngFor="let org of organizations" [value]="org.email">{{ org.email }}</option>
+      </select>
+    </div>
+    <div class="flex gap-2">
+      <button class="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg" (click)="applyFilters()">Apply</button>
+      <button class="bg-gray-100 text-gray-600 font-bold py-2 px-4 rounded-lg" (click)="clearFilters()">Clear All</button>
+    </div>
+  </div>
+
+  <!-- Organization Table -->
+  <div class="overflow-hidden shadow-lg rounded-xl mb-5">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="p-3 font-bold text-sm text-gray-600">No</th>
+          <th class="p-3 font-bold text-sm text-gray-600">Organization Name</th>
+          <th class="p-3 font-bold text-sm text-gray-600">Email</th>
+          <th class="p-3 font-bold text-sm text-gray-600">Phone</th>
+          <th class="p-3 font-bold text-sm text-gray-600">Head of the Organization</th>
+          <th class="p-3 font-bold text-sm text-gray-600">User Count</th>
+          <th class="p-3 font-bold text-sm text-gray-600">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let org of filteredOrganizations(); let i = index" class="even:bg-white">
+          <td class="p-3">{{ i + 1 }}</td>
+          <td class="p-3">
+            <div class="flex items-center">
+              <img src="{{ org.logo }}" alt="Organization Logo" class="w-6 h-6 rounded-full mr-2" />
+              <span>{{ org.name }}</span>
+            </div>
+          </td>
+          <td class="p-3">{{ org.email }}</td>
+          <td class="p-3">{{ org.phone }}</td>
+          <td class="p-3">{{ org.head }}</td>
+          <td class="p-3">{{ org.userCount }}</td>
+          <td class="p-3">
+            <button class="text-lg text-gray-500 hover:text-gray-700">...</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex justify-between items-center">
+    <button class="py-1 px-3 bg-gray-100 rounded-lg">Show 10</button>
+    <span class="text-sm text-gray-500">Showing 1 to 10 of {{ filteredOrganizations().length }} entries</span>
+  </div>
+</div>
+
+<!--!TailWInd  -->
+<!-- <div class="organization-list-container"> -->
+  <!--# Header Section -->
+  <!-- <div class="header-section">
     <div class="controls">
       <input type="text" placeholder="Search..." class="search-input" [(ngModel)]="searchTerm" />
       <button class="filter-button" (click)="toggleFilter()">Filter</button>
       <button class="create-button">+ Create Organization</button>
     </div>
-  </div>
+  </div> -->
 
-  <!-- Filter PopUP -->
-  <div class="filter-modal" [ngClass]="{'active': isFilterVisible}">
+  <!--# Filter PopUP -->
+  <!-- <div class="filter-modal" [ngClass]="{'active': isFilterVisible}">
     <h3>Filter Organizations</h3>
     <div class="filter-group">
       <label for="headFilter">Head of Organization</label>
@@ -27,10 +113,10 @@
     </div>
     <button class="apply-button" (click)="applyFilters()">Apply</button>
     <button class="clear-button" (click)="clearFilters()">Clear All</button>
-  </div>
+  </div> -->
 
-  <!-- Organization Table -->
-  <div class="table-container">
+  <!--# Organization Table -->
+  <!-- <div class="table-container">
     <table>
       <thead>
         <tr>
@@ -43,9 +129,9 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Use *ngFor to iterate over the filtered organizations array -->
-        <tr *ngFor="let org of filteredOrganizations(); let i = index">
+      <tbody> -->
+        <!--# Use *ngFor to iterate over the filtered organizations array -->
+        <!-- <tr *ngFor="let org of filteredOrganizations(); let i = index">
           <td>{{ i + 1 }}</td>
           <td>
             <div class="org-info">
@@ -61,11 +147,11 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
 
-  <!-- Pagination (if necessary) -->
-  <div class="pagination">
+  <!--# Pagination (if necessary) -->
+  <!-- <div class="pagination">
     <button class="show-entries">Show 10</button>
     <span>Showing 1 to 10 of {{ filteredOrganizations().length }} entries</span>
   </div>
-</div>
+</div> -->
