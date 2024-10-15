@@ -1,15 +1,17 @@
-<!-- user-list.component.html -->
 <div class="user-list-container">
   <!-- Header Section -->
   <div class="header-section">
     <div class="controls">
       <input type="text" placeholder="Search..." class="search-input" />
       <button class="filter-button">Filter</button>
-      <button class="create-button" (click)="navigateToCreateUser()">+ Create User</button>
+      <button class="download-button">Download Format</button>
+      <button class="create-button" (click)="navigateToCreateUser()">
+        + Create User
+      </button>
     </div>
   </div>
 
-  <!-- user Table -->
+  <!-- User Table -->
   <div class="table-container">
     <table>
       <thead>
@@ -25,7 +27,6 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Use *ngFor to iterate over the users array -->
         <tr *ngFor="let user of users; let i = index">
           <td>{{ i + 1 }}</td>
           <td>
