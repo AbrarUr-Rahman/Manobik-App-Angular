@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
@@ -10,35 +10,39 @@ import { filter, map } from 'rxjs/operators';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
   standalone: true,
-  imports: [RouterModule, HeaderComponent, SidebarComponent]
+  imports: [RouterModule, HeaderComponent, SidebarComponent],
 })
 export class LayoutComponent implements OnInit {
-  title: string = 'Default List'; // Title to be displayed
+  title: string = 'Default Title'; // Title to be displayed
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
-   
-    console.log('LayoutComponent initialized'); // This works
+    console.log('LayoutComponent initialized');
 
+    // Subscribe to router events and update the title based on the route
     this.router.events
       .pipe(
-        filter(event => event instanceof NavigationEnd),  // Filter for NavigationEnd events
+        filter((event) => event instanceof NavigationEnd), // Filter for NavigationEnd events
         map(() => {
-          let child = this.route.firstChild;
-          console.log('Checking child routes...'); // Log for debugging
-          while (child?.firstChild) {
-            console.log('Current child:', child); // Log the current child
-            child = child.firstChild; // Traverse to the deepest child
+          let currentRoute = this.router.routerState.root;
+          while (currentRoute.firstChild) {
+            currentRoute = currentRoute.firstChild; // Navigate to the deepest child
           }
-          return child?.snapshot.data['title']; // Get title from route data
+          return currentRoute.snapshot.data['title']; // Get title from the deepest activated route
         })
       )
       .subscribe((title: string | undefined) => {
-        console.log('Current Title:', title); // Log the current title
-        this.title = title || 'Default Title'; // Set title or fallback
-        
-      });
+        console.log('Current Title:', title);
+
+        this.title = title || 'Default Title'; // Set the title or a fallback value
+        console.log('Title set in LayoutComponent:', this.title);
       
+        // this.cd.detectChanges();
+      });
   }
 }

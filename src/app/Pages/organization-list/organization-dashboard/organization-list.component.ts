@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-organization-list',
   standalone: true,
@@ -22,8 +22,15 @@ export class OrganizationListComponent {
     { name: 'Organization 9', email: 'Samsad@bracits.com', phone: '+880 1958674857', head: 'Samsad', userCount: 2, logo: 'assets/images/org-logo.png' },
     { name: 'Organization 10', email: 'Faruque@bracits.com', phone: '+880 1958674857', head: 'Faruque Simanta', userCount: 1, logo: 'assets/images/org-logo.png' },
   ];
+  constructor (private router:Router){};
 
-  // Filter-related properties
+
+  submitForm(){
+    this.router.navigate(['/fivew-form/create-form'])
+
+  }
+
+  //! Filter-related properties
   searchTerm: string = '';
   headFilter: string = '';
   emailFilter: string = '';
@@ -60,7 +67,7 @@ export class OrganizationListComponent {
     });
   }
 
-  // Method to toggle the action menu
+  //! Method to toggle the action menu
   toggleActionMenu(index: number) {
     if (this.actionMenuIndex === index) {
       this.actionMenuIndex = null; // Close the menu if clicked again
@@ -73,12 +80,14 @@ export class OrganizationListComponent {
   viewDetails(org: any) {
     console.log('Viewing details for', org);
     this.actionMenuIndex = null; // Close the menu after action
+    this.router.navigate(['/organization/org-details']);
   }
 
   // Placeholder method for editing organization
   editOrganization(org: any) {
     console.log('Editing organization', org);
     this.actionMenuIndex = null; // Close the menu after action
+    this.router.navigate(['/organization/edit-org']);
   }
 
   // Placeholder method for deleting organization

@@ -1,6 +1,27 @@
 <!--!TailWInd  -->
 <div class="p-5 text-gray-800">
   <!-- Existing Code for the Table ... -->
+  <div class="header-section">
+    <div class="controls">
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input" />
+        <img
+          src="../../../assets/images/form-search-icon.png"
+          alt="Search Icon"
+          class="icon search-icon"
+        />
+      </div>
+      <button class="filter-button">
+        <img
+          src="../../../assets/images/filter-icon.png"
+          alt="Filter Icon"
+          class="icon filter-icon"
+        />
+        Filter
+      </button>
+      <button class="create-button" (click)="submitForm()">+ Create Organization</button>
+    </div>
+  </div>
 
   <div class="overflow-hidden shadow-lg rounded-xl mb-5">
     <table class="w-full text-left border-collapse">

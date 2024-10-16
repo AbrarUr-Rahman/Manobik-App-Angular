@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +8,9 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports:[NgClass]
 })
-export class HeaderComponent {
-  @Input() title: string = 'Default Header Title';
+export class HeaderComponent implements OnChanges{
+  @Input() title: string = ''; 
+  // @Input() title: string = 'Default Header Title';
   isFilterVisible: boolean = false;
 
   toggleFilter() {
@@ -23,4 +24,12 @@ export class HeaderComponent {
   applyFilters() {
     // Logic to apply the selected filters
   }
+  // ngOnInit(){
+  //   console.log("header title",this.title)
+  // }
+  ngOnChanges() {
+    console.log('header title:  ', this.title);  // Log to confirm title update
+    
+  }
+ 
 }

@@ -74,6 +74,9 @@ import { UserDetailsComponent } from './Pages/user-list/user-details/user-detail
 import { ResetPassComponent } from './Pages/user-list/reset-pass/reset-pass.component';
 import { DownAppComponent } from './Pages/login/down-app/down-app.component';
 import { CreateFormComponent } from './Pages/fivew-form/create-form/create-form.component';
+import { CreateOrgComponent } from './Pages/organization-list/create-org/create-org.component';
+import { OrgDetailsComponent } from './Pages/organization-list/org-details/org-details.component';
+import { EditOrgComponent } from './Pages/organization-list/edit-org/edit-org.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -94,7 +97,11 @@ export const routes: Routes = [
     path: 'organization',
     component: LayoutComponent,
     children: [
-      { path: '', component: OrganizationListComponent, data: { title: 'Organization List' } }
+      { path: '', component: OrganizationListComponent, data: { title: 'Organization List' } },
+      { path: 'create-org', component: CreateOrgComponent, data: { title: 'Create Form' } },
+      { path: 'org-details', component: OrgDetailsComponent, data: { title: 'Organization Details' } },
+      { path: 'edit-org', component: EditOrgComponent, data: { title: 'Edit Organization' } },
+
     ]
   },
   {

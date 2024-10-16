@@ -65,3 +65,10 @@
 //     border-radius: 50%;
 //     cursor: pointer;
 // }
+
+//! TailWind 
+ .header-container{
+    display: flex;
+    @apply  items-center justify-between px-2.5 py-10 bg-white mr-6 gap-10 
+ }
+//! TailWind 

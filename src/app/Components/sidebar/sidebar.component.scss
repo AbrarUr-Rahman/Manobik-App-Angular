@@ -59,3 +59,13 @@
 //     color: #ff007b;
 //     cursor: pointer;
 // }
+
+
+.sidebar-container {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hidden-sidebar {
+    transform: translateX(-100%);
+  }
+  
