@@ -11,3 +11,8 @@ Work done for today:
 2. Added click functionality on dots
 3. Added & Working on responsive utility classes 
 4. Added & Working on  services & pipeline for dynamic page title 
+15/10/2024
+Work done for today:
+1. Made toggleable sidebar(Sidebar disappears/reappears  on click)
+2. Dynamic title router added 
+3. Added responsive classes (Not complete)
