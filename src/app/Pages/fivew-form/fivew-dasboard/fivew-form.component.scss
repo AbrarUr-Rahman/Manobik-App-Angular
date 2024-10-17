@@ -160,3 +160,26 @@
         }
     }
 }
+.status-pending {
+    background-color: #fffaeb;
+    border: 1px solid #e4e7ec; 
+    color: #fab75e; /* Darker yellow text */
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+    gap: 9px;
+  }
+  
+  .status-verified {
+    background-color: #ecfdf3; /* Light green background */
+    border: 1px solid #e4e7ec; /* Green border */
+    color: #039855; /* Darker green text */
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+  }
+  

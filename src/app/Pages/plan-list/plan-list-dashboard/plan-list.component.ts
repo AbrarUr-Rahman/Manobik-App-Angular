@@ -9,15 +9,15 @@ import { CommonModule, NgFor } from '@angular/common';
 })
 export class PlanListComponent {
   users = [
-    { name: 'Khalid',phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/user-avatar.png' },
-    { name: 'Nahid ',phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/user-avatar.png' },
-    { name: 'Shakib ', phone: '+880 1958674857', submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/user-avatar.png' },
-    { name: 'Pranto ',phone: '+880 1958674857', submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/user-avatar.png' },
-    { name: 'Taimor ',  phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/user-avatar.png' },
-    { name: 'Kidwa ',phone: '+880 1958674857', submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/user-avatar.png' },
-    { name: 'Ahmed ',phone: '+880 1958674857', submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/user-avatar.png' },
-    { name: 'Esmail ', phone: '+880 1958674857',submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/user-avatar.png' },
-    { name: 'Samsad ',phone: '+880 1958674857', submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/user-avatar.png' },
-    { name: 'Faruque ',phone: '+880 1958674857',submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/user-avatar.png' },
+    { name: 'Khalid',phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/khalid.png' },
+    { name: 'Nahid ',phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/nahid.png' },
+    { name: 'Shakib ', phone: '+880 1958674857', submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/shakib.png' },
+    { name: 'Pranto ',phone: '+880 1958674857', submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/pranto.png' },
+    { name: 'Taimor ',  phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/taimur.png' },
+    { name: 'Kidwa ',phone: '+880 1958674857', submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/kidwa.png' },
+    { name: 'Ahmed ',phone: '+880 1958674857', submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/ahmed.png' },
+    { name: 'Esmail ', phone: '+880 1958674857',submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/ismail.png' },
+    { name: 'Samsad ',phone: '+880 1958674857', submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/samsad.png' },
+    { name: 'Faruque ',phone: '+880 1958674857',submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/faruque.png' },
   ];
 }

@@ -16,3 +16,8 @@ Work done for today:
 1. Made toggleable sidebar(Sidebar disappears/reappears  on click)
 2. Dynamic title router added 
 3. Added responsive classes (Not complete)
+17/10/2024
+Work done for today:
+1. Added rest of the icons and styles from figma 
+2. Completed dynamic title loading with services 
+3. added animation& transition toggalable sidebar-navbar icon which adjusts the page accordingly

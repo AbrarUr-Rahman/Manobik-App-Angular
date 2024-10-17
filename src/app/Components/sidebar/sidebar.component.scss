@@ -68,4 +68,10 @@
   .hidden-sidebar {
     transform: translateX(-100%);
   }
+  .toggle-icon {
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
   
+  .flipped {
+    transform: rotate(180deg); /* Rotates the icon 180 degrees */
+  }

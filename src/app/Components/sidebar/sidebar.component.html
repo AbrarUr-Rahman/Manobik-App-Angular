@@ -101,8 +101,8 @@
   [ngClass]="{ 'hidden-sidebar': !isSidebarVisible }"
 >
   <!-- Toggle Icon -->
-  <div class="toggle-icon absolute top-5 right-[-25px] cursor-pointer" (click)="toggleSidebar()">
-    <img src="../../../assets/images/arrow-left.png" alt="Toggle Sidebar" class="w-6 h-6" />
+  <div class="toggle-icon absolute top-5 right-[-25px] cursor-pointer" (click)="toggleSidebar()"  [ngClass]="{ 'flipped': !isSidebarVisible }">
+    <img src="../../../assets/images/arrow-left.png" alt="Toggle Sidebar" class="w-4 h-4" />
   </div>
 
   <!-- Logo -->

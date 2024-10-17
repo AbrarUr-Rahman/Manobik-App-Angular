@@ -13,8 +13,8 @@
 <!--! TailWind  -->
 <!-- layout.component.html -->
  <div class="layout-container flex">
-  <app-sidebar></app-sidebar>
-  <div class="main-content flex-1 ml-[250px] flex flex-col">
+  <app-sidebar (sidebarToggled)="onSidebarToggled($event)"></app-sidebar>
+  <div class="main-content flex-1 ml-[250px] flex flex-col" [ngClass]="{ 'expanded': !isSidebarVisible }">
     <!-- <app-header [title]="title"></app-header> -->
     <app-header [title]="title"></app-header>
    <!-- Bind dynamic title  -->

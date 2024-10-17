@@ -11,7 +11,7 @@
 .set-password-container {
         @include flex-center();
     // display: flex;
-    height: 594px;
+    height: 500px;
     width: 480px;
     position: relative;
     border: 1px solid #E4E7EC;
@@ -48,8 +48,8 @@
                 width: 56px;
                 height: 56px;
                 font-size: 25px;
-                position: absolute;
-                top: 10px;
+                // position: absolute;
+                // top: 10px;
                 left: 200px;
                 color: #333333;
                 // margin-top: 10px;

@@ -36,13 +36,13 @@
           </td>
 
           <!-- !Have to add org icon here -->
-          <!-- <td class="px-5 py-4">
+          <td class="px-5 py-4">
             <div class="flex items-center">
-              <img src="" alt="org Logo" class="w-6 h-6 rounded-full mr-2" />
-              <span class="text-sm"></span>
+              <img src="{{user.org_logo}}" alt="org Logo" class="w-6 h-6 rounded-full mr-2" />
+              <span class="text-sm">{{ user.orgname }}</span>
             </div>
-          </td> -->
-          <td class="px-5 py-4 text-sm">{{ user.orgname }}</td>
+          </td>
+          <!-- <td class="px-5 py-4 text-sm">{{ user.orgname }}</td> -->
           <td class="px-5 py-4 text-sm">{{ user.userRole }}</td>
           <td class="px-5 py-4 text-sm">{{ user.designation }}</td>
           <td class="px-5 py-4 text-sm">{{ user.email }}</td>

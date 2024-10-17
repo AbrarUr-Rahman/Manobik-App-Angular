@@ -1,5 +1,7 @@
 import { NgClass } from '@angular/common';
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TitleService } from '../../services/title.service'; 
 
 @Component({
   selector: 'app-header',
@@ -8,10 +10,14 @@ import { Component, Input, OnChanges } from '@angular/core';
   standalone: true,
   imports:[NgClass]
 })
-export class HeaderComponent implements OnChanges{
-  @Input() title: string = ''; 
+export class HeaderComponent implements OnInit{
+  // @Input() title: string = ''; 
   // @Input() title: string = 'Default Header Title';
+title:string='Default Title';  
   isFilterVisible: boolean = false;
+  constructor (private router:Router,
+    private titleService:TitleService
+  ){}
 
   toggleFilter() {
     this.isFilterVisible = !this.isFilterVisible;
@@ -27,9 +33,18 @@ export class HeaderComponent implements OnChanges{
   // ngOnInit(){
   //   console.log("header title",this.title)
   // }
-  ngOnChanges() {
-    console.log('header title:  ', this.title);  // Log to confirm title update
+  // ngOnChanges() {
+  //   console.log('header title:  ', this.title);  // Log to confirm title update
     
+  // }
+  goToDashboard(){
+    this.router.navigate(['/profile']);
+  }
+
+  ngOnInit() {
+      this.titleService.currentTitle.subscribe((newTitle)=>{
+        this.title=newTitle;
+      })
   }
  
 }

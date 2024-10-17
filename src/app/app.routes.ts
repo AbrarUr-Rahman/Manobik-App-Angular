@@ -98,7 +98,7 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: OrganizationListComponent, data: { title: 'Organization List' } },
-      { path: 'create-org', component: CreateOrgComponent, data: { title: 'Create Form' } },
+      { path: 'create-org', component: CreateOrgComponent, data: { title: 'Create Organization' } },
       { path: 'org-details', component: OrgDetailsComponent, data: { title: 'Organization Details' } },
       { path: 'edit-org', component: EditOrgComponent, data: { title: 'Edit Organization' } },
 

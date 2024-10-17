@@ -103,12 +103,11 @@
       <thead>
         <tr>
           <th>No</th>
-          <th>User Name</th>
-          <th>Organization Name</th>
-          <th>User Role</th>
-          <th>Designation</th>
-          <th>Email</th>
-          <th>Phone</th>
+          <th>Submitted By</th>
+          <th>email</th>
+          <th>phone</th>
+          <th>Location</th>
+          <th>Status</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -121,11 +120,11 @@
               <span>{{ user.name }}</span>
             </div>
           </td>
-          <td>{{ user.orgname }}</td>
-          <td>{{ user.userRole }}</td>
-          <td>{{ user.designation }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
+          <td>{{ user.location }}</td>
+          <td [ngClass]="{'status-pending':user.status=='Pending','status-verified':user.status=='Verified'}">{{ user.status }}</td> <!--! Checks to see conditional status boxes-->
+         
           <td>
             <button class="action-button">...</button>
           </td>

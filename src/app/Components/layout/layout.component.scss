@@ -16,3 +16,16 @@
 //     flex: 1;
 //     background-color: #f9f9f9;
 // }
+
+.main-content {
+    margin-left: 250px; /* Full sidebar width */
+    transition: margin-left 0.3s ease;
+  
+    &.expanded {
+      margin-left: 0; /* Adjust margin when sidebar is hidden */
+    }
+  }
+  
+  .content-area {
+    transition: padding-left 0.3s ease;
+  }
