@@ -1,259 +1,34 @@
-// /* organization-list.component.scss */
-// .organization-list-container {
-//     padding: 20px;
-//     font-family: Arial, sans-serif;
-//     color: #333;
+/* organization-list.component.scss */
+.organization-list-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
 
-//     .header-section {
-//         display: flex;
-//         justify-content: flex-end;
-//         align-items: center;
-//         margin-bottom: 20px;
-
-//         h1 {
-//             font-size: 1.5rem;
-//             font-weight: bold;
-//             margin-right: auto;
-//         }
-
-//         .controls {
-//             display: flex;
-//             align-items: center;
-//             gap: 10px;
-//         }
-
-//         .search-input {
-//             padding: 8px 12px;
-//             border: 1px solid #ddd;
-//             border-radius: 8px;
-//         }
-
-//         .filter-button,
-//         .create-button {
-//             padding: 8px 12px;
-//             border-radius: 8px;
-//             font-size: 0.9rem;
-//             font-weight: bold;
-//             cursor: pointer;
-//             border: none;
-//         }
-
-//         .filter-button {
-//             background-color: #f3f3f3;
-//             color: #555;
-//         }
-
-//         .create-button {
-//             background-color: #ff007b;
-//             color: white;
-//         }
-//     }
-
-//     .table-container {
-//         border-radius: 12px;
-//         overflow: hidden;
-//         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-//         margin-bottom: 20px;
-
-//         table {
-//             width: 100%;
-//             border-collapse: collapse;
-
-//             th,
-//             td {
-//                 padding: 12px 15px;
-//                 text-align: left;
-//             }
-
-//             th {
-//                 background-color: #f7f7f9;
-//                 font-weight: bold;
-//                 font-size: 0.9rem;
-//                 color: #555;
-//             }
-
-//             tbody tr:nth-child(even) {
-//                 background-color: #fff;
-//             }
-
-//             .org-info {
-//                 display: flex;
-//                 align-items: center;
-
-//                 .org-logo {
-//                     width: 24px;
-//                     height: 24px;
-//                     border-radius: 50%;
-//                     margin-right: 8px;
-//                 }
-//             }
-
-//             .action-button {
-//                 background: none;
-//                 border: none;
-//                 font-size: 1.2rem;
-//                 color: #888;
-//                 cursor: pointer;
-//             }
-//         }
-//     }
-
-//     .pagination {
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-
-//         .show-entries {
-//             padding: 6px 12px;
-//             border-radius: 8px;
-//             background-color: #f3f3f3;
-//             border: none;
-//             font-size: 0.9rem;
-//         }
-
-//         span {
-//             font-size: 0.9rem;
-//             color: #777;
-//         }
-
-//         .pagination-controls {
-//             display: flex;
-//             align-items: center;
-//             gap: 8px;
-//         }
-
-//         .page-button,
-//         .page-number {
-//             padding: 6px 12px;
-//             border-radius: 50%;
-//             background-color: #f3f3f3;
-//             border: none;
-//             cursor: pointer;
-//             font-size: 0.9rem;
-//         }
-
-//         .page-number.active {
-//             background-color: #ff007b;
-//             color: white;
-//         }
-//     }
-
-//     /* New styles for the filter modal */
-//     .filter-modal {
-//         display: none;
-//         position: absolute;
-//         top: 80px;
-//         right: 20px;
-//         width: 300px;
-//         padding: 20px;
-//         background-color: #fff;
-//         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-//         border-radius: 10px;
-//         z-index: 100;
-
-//         &.active {
-//             display: block;
-//         }
-
-//         h3 {
-//             font-size: 1.25rem;
-//             font-weight: 600;
-//             margin-bottom: 20px;
-//         }
-
-//         .filter-group {
-//             margin-bottom: 15px;
-
-//             label {
-//                 display: block;
-//                 font-weight: 500;
-//                 margin-bottom: 5px;
-//             }
-
-//             select {
-//                 width: 100%;
-//                 padding: 8px;
-//                 border-radius: 5px;
-//                 border: 1px solid #ddd;
-//             }
-//         }
-
-//         .apply-button,
-//         .clear-button {
-//             padding: 10px 20px;
-//             border: none;
-//             border-radius: 5px;
-//             cursor: pointer;
-//             font-size: 1rem;
-//             font-weight: 600;
-//         }
-
-//         .apply-button {
-//             background-color: #d83f87;
-//             color: white;
-//         }
-
-//         .clear-button {
-//             background-color: #f5f5f5;
-//             margin-right: 10px;
-//         }
-//     }
-// }
-.header-section {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 20px;
-
-    .controls {
+    .header-section {
         display: flex;
+        justify-content: flex-end;
         align-items: center;
-        gap: 10px;
+        margin-bottom: 20px;
 
-        .search-container {
-            position: relative;
-
-            .search-input {
-                padding: 8px 12px 8px 35px;
-                /* Adjusted padding for icon space */
-                border: 1px solid #ddd;
-                border-radius: 8px;
-            }
-
-            .search-icon {
-                position: absolute;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 18px;
-                height: 18px;
-                pointer-events: none;
-            }
-        }
-
-        .filter-button {
-            padding: 8px 12px 8px 35px;
-            /* Adjusted padding for icon space */
-            border-radius: 8px;
-            font-size: 0.9rem;
+        h1 {
+            font-size: 1.5rem;
             font-weight: bold;
-            cursor: pointer;
-            border: none;
-            background-color: #f3f3f3;
-            color: #555;
-            position: relative;
-
-            .filter-icon {
-                position: absolute;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 18px;
-                height: 18px;
-                pointer-events: none;
-            }
+            margin-right: auto;
         }
 
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .filter-button,
         .create-button {
             padding: 8px 12px;
             border-radius: 8px;
@@ -261,8 +36,234 @@
             font-weight: bold;
             cursor: pointer;
             border: none;
+        }
+
+        .filter-button {
+            background-color: #f3f3f3;
+            color: #555;
+        }
+
+        .create-button {
             background-color: #ff007b;
             color: white;
         }
     }
+
+    .table-container {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+                padding: 12px 15px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f7f7f9;
+                font-weight: bold;
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #fff;
+            }
+
+            .org-info {
+                display: flex;
+                align-items: center;
+
+                .org-logo {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                }
+            }
+
+            .action-button {
+                background: none;
+                border: none;
+                font-size: 1.2rem;
+                color: #888;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .show-entries {
+            padding: 6px 12px;
+            border-radius: 8px;
+            background-color: #f3f3f3;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        span {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .pagination-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-button,
+        .page-number {
+            padding: 6px 12px;
+            border-radius: 50%;
+            background-color: #f3f3f3;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .page-number.active {
+            background-color: #ff007b;
+            color: white;
+        }
+    }
+
+    /* New styles for the filter modal */
+    .filter-modal {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        z-index: 100;
+
+        &.active {
+            display: block;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+
+            label {
+                display: block;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+
+            select {
+                width: 100%;
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+            }
+        }
+
+        .apply-button,
+        .clear-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .apply-button {
+            background-color: #d83f87;
+            color: white;
+        }
+
+        .clear-button {
+            background-color: #f5f5f5;
+            margin-right: 10px;
+        }
+    }
 }
+
+// .header-section {
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: center;
+//     margin-bottom: 20px;
+
+//     .controls {
+//         display: flex;
+//         align-items: center;
+//         gap: 10px;
+
+//         .search-container {
+//             position: relative;
+
+//             .search-input {
+//                 padding: 8px 12px 8px 35px;
+//                 /* Adjusted padding for icon space */
+//                 border: 1px solid #ddd;
+//                 border-radius: 8px;
+//             }
+
+//             .search-icon {
+//                 position: absolute;
+//                 left: 10px;
+//                 top: 50%;
+//                 transform: translateY(-50%);
+//                 width: 18px;
+//                 height: 18px;
+//                 pointer-events: none;
+//             }
+//         }
+
+//         .filter-button {
+//             padding: 8px 12px 8px 35px;
+//             /* Adjusted padding for icon space */
+//             border-radius: 8px;
+//             font-size: 0.9rem;
+//             font-weight: bold;
+//             cursor: pointer;
+//             border: none;
+//             background-color: #f3f3f3;
+//             color: #555;
+//             position: relative;
+
+//             .filter-icon {
+//                 position: absolute;
+//                 left: 10px;
+//                 top: 50%;
+//                 transform: translateY(-50%);
+//                 width: 18px;
+//                 height: 18px;
+//                 pointer-events: none;
+//             }
+//         }
+
+//         .create-button {
+//             padding: 8px 12px;
+//             border-radius: 8px;
+//             font-size: 0.9rem;
+//             font-weight: bold;
+//             cursor: pointer;
+//             border: none;
+//             background-color: #ff007b;
+//             color: white;
+//         }
+//     }
+// }

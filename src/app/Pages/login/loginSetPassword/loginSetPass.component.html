@@ -1,4 +1,69 @@
 <!--!Tailwind  -->
+<div class="set-password-container">
+  <div class="setpass-right-side">
+    <div class="header-text">
+      <div class="flex items-center justify-center">
+        <img
+          src="../../../../assets/images/lock-icon.png"
+          alt="Lock Icon"
+          class="lock-icon"
+        />
+      </div>
+
+      <h2>Set new password</h2>
+      <div class="setup-text">
+        <span>Create your password to complete your </span>
+        <span>account setup</span>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+            minlength="8"
+            [(ngModel)]="password"
+            name="password"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm password"
+            required
+            minlength="8"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+          />
+          <span
+            class="password-requirement"
+            *ngIf="password && confirmPassword && password !== confirmPassword"
+            >Passwords do not match</span
+          >
+          <span class="password-requirement">
+            Must be at least 8 characters long
+          </span>
+        </div>
+
+        <button type="submit" class="submit-button">Reset password</button>
+      </form>
+
+      <a href="/login/sign-in" class="back-link">← Back to log in</a>
+      <!--@ <a routerLink="/login/sign-in" class="back-link">← Back to log in</a> -->
+      <!-- @</div> -->
+    </div>
+  </div>
+</div>
+
+<!--!Tailwind  -->
 <!-- <div class="flex h-[594px] w-[480px] relative border border-gray-300 rounded-2xl mt-10">
   <div class="flex flex-1 flex-col justify-center items-center p-0">
     <div class="text-center mb-10 relative">
@@ -53,57 +118,3 @@
     </div>
   </div>
 </div> -->
-
-<!--!Tailwind  -->
-<div class="set-password-container">
-  <div class="setpass-right-side">
-    <div class="header-text">
-      <div class="flex items-center justify-center">  <img
-        src="../../../../assets/images/lock-icon.png"
-        alt="Lock Icon"
-        class="lock-icon"
-      /></div>
-    
-      <h2>Set new password</h2>
-      <div class="setup-text">
-        <span>Create your password to complete your </span>
-        <span>account setup</span>
-      </div>
-    </div>
-
-    <div class="form-container">
-      <form (ngsubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            required
-            minlength="8"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="confirm-password">Confirm password</label>
-          <input
-            type="password"
-            id="confirm-password"
-            placeholder="Confirm password"
-            required
-            minlength="8"
-          />
-          <span class="password-requirement"
-            >Must be at least 8 characters</span
-          >
-        </div>
-
-        <button type="submit" class="submit-button" >Reset password</button>
-      </form>
-
-      <a href="/login/sign-in" class="back-link">← Back to log in</a>
-      <!--@ <a routerLink="/login/sign-in" class="back-link">← Back to log in</a> -->
-    <!-- @</div> -->
-    </div>
-  </div>
-</div>

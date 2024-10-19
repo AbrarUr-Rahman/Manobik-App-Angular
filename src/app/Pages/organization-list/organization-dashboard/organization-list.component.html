@@ -1,7 +1,7 @@
 <!--!TailWInd  -->
-<div class="p-5 text-gray-800">
-  <!-- Existing Code for the Table ... -->
-  <div class="header-section">
+<!-- <div class="p-5 text-gray-800"> -->
+<!-- Existing Code for the Table ... -->
+<!-- <div class="header-section">
     <div class="controls">
       <div class="search-container">
         <input type="text" placeholder="Search..." class="search-input" />
@@ -50,10 +50,10 @@
           <td class="p-3">{{ org.head }}</td>
           <td class="p-3">{{ org.userCount }}</td>
           <td class="p-3 relative">
-            <button class="text-lg text-gray-500 hover:text-gray-700" (click)="toggleActionMenu(i)">...</button>
+            <button class="text-lg text-gray-500 hover:text-gray-700" (click)="toggleActionMenu(i)">...</button> -->
 
-            <!-- Action Menu -->
-            <div *ngIf="actionMenuIndex === i" class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48">
+<!-- Action Menu -->
+<!-- <div *ngIf="actionMenuIndex === i" class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48">
               <ul class="text-sm">
                 <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="viewDetails(org)">
                   <img src="../../../../assets/images/eye.png" alt="View Icon" class="w-4 h-4 mr-2" />
@@ -61,6 +61,129 @@
                 </li>
                 <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="editOrganization(org)">
                   <img src="../../../../assets/images/pen.png" alt="Edit Icon" class="w-4 h-4 mr-2" />
+                  <span>Edit</span>
+                </li> -->
+<!-- <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="deleteOrganization(org)">
+                  <img src="assets/icons/delete-icon.png" alt="Delete Icon" class="w-4 h-4 mr-2" />
+                  <span>Delete</span>
+                </li> -->
+<!-- </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+
+</div> -->
+
+<!--!TailWInd  -->
+<div class="organization-list-container">
+  <!--# Header Section -->
+  <div class="header-section">
+    <div class="controls">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="search-input"
+        [(ngModel)]="searchTerm"
+      />
+      <button class="filter-button" (click)="toggleFilter()">Filter</button>
+      <button class="create-button">+ Create Organization</button>
+    </div>
+  </div>
+
+  <!--# Filter PopUP -->
+  <div class="filter-modal" [ngClass]="{ active: isFilterVisible }">
+    <h3>Filter Organizations</h3>
+    <div class="filter-group">
+      <label for="headFilter">Head of Organization</label>
+      <select id="headFilter" [(ngModel)]="headFilter">
+        <option value="">All</option>
+        <option *ngFor="let org of organizations" [value]="org.head">
+          {{ org.head }}
+        </option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="emailFilter">Email</label>
+      <select id="emailFilter" [(ngModel)]="emailFilter">
+        <option value="">All</option>
+        <option *ngFor="let org of organizations" [value]="org.email">
+          {{ org.email }}
+        </option>
+      </select>
+    </div>
+    <button class="apply-button" (click)="applyFilters()">Apply</button>
+    <button class="clear-button" (click)="clearFilters()">Clear All</button>
+  </div>
+
+  <!--# Organization Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Organization Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Head of the Organization</th>
+          <th>User Count</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--# Use *ngFor to iterate over the filtered organizations array -->
+        <tr *ngFor="let org of filteredOrganizations(); let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <div class="org-info">
+              <img
+                src="{{ org.logo }}"
+                alt="Organization Logo"
+                class="org-logo"
+              />
+              <span>{{ org.name }}</span>
+            </div>
+          </td>
+          <td>{{ org.email }}</td>
+          <td>{{ org.phone }}</td>
+          <td>{{ org.head }}</td>
+          <td>{{ org.userCount }}</td>
+          <td class="p-3 relative">
+            <button
+              class="text-lg text-gray-500 hover:text-gray-700"
+              (click)="toggleActionMenu(i)"
+            >
+              ...
+            </button>
+
+            <!-- Action Menu -->
+            <div
+              *ngIf="actionMenuIndex === i"
+              class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48"
+            >
+              <ul class="text-sm">
+                <li
+                  class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer"
+                  (click)="viewDetails(org)"
+                >
+                  <img
+                    src="../../../../assets/images/eye.png"
+                    alt="View Icon"
+                    class="w-4 h-4 mr-2"
+                  />
+                  <span>View Details</span>
+                </li>
+                <li
+                  class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer"
+                  (click)="editOrganization(org)"
+                >
+                  <img
+                    src="../../../../assets/images/pen.png"
+                    alt="Edit Icon"
+                    class="w-4 h-4 mr-2"
+                  />
                   <span>Edit</span>
                 </li>
                 <!-- <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="deleteOrganization(org)">
@@ -75,79 +198,9 @@
     </table>
   </div>
 
-  <!-- Pagination and other existing elements ... -->
-</div>
-
-
-<!--!TailWInd  -->
-<!-- <div class="organization-list-container"> -->
-  <!--# Header Section -->
-  <!-- <div class="header-section">
-    <div class="controls">
-      <input type="text" placeholder="Search..." class="search-input" [(ngModel)]="searchTerm" />
-      <button class="filter-button" (click)="toggleFilter()">Filter</button>
-      <button class="create-button">+ Create Organization</button>
-    </div>
-  </div> -->
-
-  <!--# Filter PopUP -->
-  <!-- <div class="filter-modal" [ngClass]="{'active': isFilterVisible}">
-    <h3>Filter Organizations</h3>
-    <div class="filter-group">
-      <label for="headFilter">Head of Organization</label>
-      <select id="headFilter" [(ngModel)]="headFilter">
-        <option value="">All</option>
-        <option *ngFor="let org of organizations" [value]="org.head">{{ org.head }}</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <label for="emailFilter">Email</label>
-      <select id="emailFilter" [(ngModel)]="emailFilter">
-        <option value="">All</option>
-        <option *ngFor="let org of organizations" [value]="org.email">{{ org.email }}</option>
-      </select>
-    </div>
-    <button class="apply-button" (click)="applyFilters()">Apply</button>
-    <button class="clear-button" (click)="clearFilters()">Clear All</button>
-  </div> -->
-
-  <!--# Organization Table -->
-  <!-- <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Organization Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Head of the Organization</th>
-          <th>User Count</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody> -->
-        <!--# Use *ngFor to iterate over the filtered organizations array -->
-        <!-- <tr *ngFor="let org of filteredOrganizations(); let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>
-            <div class="org-info">
-              <img src="{{ org.logo }}" alt="Organization Logo" class="org-logo" />
-              <span>{{ org.name }}</span>
-            </div>
-          </td>
-          <td>{{ org.email }}</td>
-          <td>{{ org.phone }}</td>
-          <td>{{ org.head }}</td>
-          <td>{{ org.userCount }}</td>
-          <td><button class="action-button">...</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div> -->
-
   <!--# Pagination (if necessary) -->
-  <!-- <div class="pagination">
+  <div class="pagination">
     <button class="show-entries">Show 10</button>
     <span>Showing 1 to 10 of {{ filteredOrganizations().length }} entries</span>
   </div>
-</div> -->
+</div>
