@@ -1,15 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900);
-    @mixin flex-center{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 * {
     font-family: 'Poppins', sans-serif;
 }
 
 .set-password-container {
-        @include flex-center();
+    @include flex-center();
     // display: flex;
     height: 500px;
     width: 480px;
@@ -17,7 +19,8 @@
     border: 1px solid #E4E7EC;
     border-radius: var(--radius-xl);
 
-    margin-top: 100px;
+    margin-top: 194px;
+    margin-left: 100px;
 
 
     .setpass-right-side {
