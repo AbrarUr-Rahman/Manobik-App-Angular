@@ -5,8 +5,8 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { NgClass } from '@angular/common';
-// import { Title } from '@angular/platform-browser';
 import { TitleService } from '../../services/title.service'; 
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-layout',
@@ -22,31 +22,41 @@ export class LayoutComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private cd: ChangeDetectorRef,
-    // private titleService: Title
-    private titleService: TitleService
+    private titleService: TitleService,
+    private titleServiceFromBrowser: Title
   ) {}
 
   ngOnInit() {
+    // Get the title on component initialization (handles page refresh)
+    this.setTitleFromRoute();
   
-    
-      this.router.events
-        .pipe(
-          filter((event) => event instanceof NavigationEnd), // Listen for NavigationEnd events only
-          map(() => {
-            let currentRoute = this.route.root;
-            while (currentRoute.firstChild) {
-              currentRoute = currentRoute.firstChild; // Go to the deepest child route
-            }
-            return currentRoute.snapshot.data['title']; // Retrieve the title from route data
-          })
-        )
-        .subscribe((title: string | undefined) => {
-          const newTitle = title || 'Default Title'; // Use a fallback if no title is set
-          this.titleService.updateTitle(newTitle); // Update title in the TitleService
-        });
-    
-    
+    // Subscribe to router events to update title on navigation
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd), // Listen for NavigationEnd events only
+        map(() => this.getDeepestChild(this.route)) // Get the deepest child route
+      )
+      .subscribe((title: string | undefined) => {
+        const newTitle = title || 'Default Title'; // Use a fallback if no title is set
+        this.titleService.updateTitle(newTitle); // Update title in the TitleService
+        this.titleServiceFromBrowser.setTitle(newTitle); // Update the document title
+      });
+  }
   
+  // Helper function to get title from the deepest child route
+  getDeepestChild(route: ActivatedRoute): string | undefined {
+    let currentRoute = route;
+    while (currentRoute.firstChild) {
+      currentRoute = currentRoute.firstChild;
+    }
+    return currentRoute.snapshot.data['title']; // Retrieve the title from route data
+  }
+  
+  // Set title directly when the component initializes (useful for page refresh)
+  setTitleFromRoute() {
+    const title = this.getDeepestChild(this.route) || 'Default Title';
+    this.titleService.updateTitle(title); // Update title in TitleService
+    this.titleServiceFromBrowser.setTitle(title); // Set the document title
   }
   isSidebarVisible = true;
 

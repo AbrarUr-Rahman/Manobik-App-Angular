@@ -12,7 +12,10 @@ import { NgModule } from '@angular/core';
 export class LoginSigninComponent {
   email: string = '';
   password: string = '';
-
+  //  user = {
+  //   email: 'user@example.com',
+  //   password: 'password123'
+  // };
   constructor(private router: Router) {}
 
   onSignIn() {
