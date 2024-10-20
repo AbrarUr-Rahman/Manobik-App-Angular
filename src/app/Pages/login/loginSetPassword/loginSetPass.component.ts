@@ -23,10 +23,11 @@ export class LoginSetPassComponent {
  
   }
   onSubmit(){
-    if(this.password===this.confirmPassword){
+    if(this.password===this.confirmPassword  && this.password && this.confirmPassword){
       this.router.navigate(['/login/success']);
       console.log('this worked')
     }
+   
     else{
       alert('Password do not match')
     }
