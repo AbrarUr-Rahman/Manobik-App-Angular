@@ -17,6 +17,12 @@
 //     line-height: 18px;
 
 
+// flex-direction: column;
+//     align-items: center;
+//     position: fixed;
+//     line-height: 18px;
+
+
 
 // }
 
@@ -53,25 +59,145 @@
 
 
 
-.nav-menu a:hover,
-.nav-menu a.active {
-    background-color: #fff9fb;
-    color: #ff007b;
-    cursor: pointer;
-}
+// .nav-menu a:hover,
+// .nav-menu a.active {
+//     background-color: #fff9fb;
+//     color: #ff007b;
+//     cursor: pointer;
+// }
 
+
+// .sidebar-container {
+//     transition: transform 0.3s ease-in-out;
+//   }
+  
+//   .hidden-sidebar {
+//     transform: translateX(-100%);
+//   }
+//   .toggle-icon {
+//     transition: transform 0.3s ease; /* Smooth transition */
+//   }
+  
+//   .flipped {
+//     transform: rotate(180deg); /* Rotates the icon 180 degrees */
+//   }
+
+/* Sidebar container */
+// .sidebar-container {
+//   transition: all 0.3s ease-in-out;
+//   position: relative;
+//   width: 240px; /* Sidebar full width */
+  
+
+// }
 
 .sidebar-container {
-    transition: transform 0.3s ease-in-out;
-  }
+  transition: all 0.3s ease-in-out;
+  position: fixed; /* Keep sidebar fixed on the left */
+  left: 0; /* Ensure it's positioned at the left edge */
+  top: 0;
+  width: 240px; /* Full width for sidebar when open */
+  height: 100vh; /* Full height for the sidebar */
+  z-index: 100; /* Ensure it's on top of the main content */
+  background-color: white;
+}
+.hidden-sidebar {
+  width: 80px; /* Sidebar width when collapsed */
   
-  .hidden-sidebar {
-    transform: translateX(-100%);
-  }
-  .toggle-icon {
-    transition: transform 0.3s ease; /* Smooth transition */
-  }
-  
-  .flipped {
-    transform: rotate(180deg); /* Rotates the icon 180 degrees */
-  }
+}
+
+/* Hide the logo when sidebar is collapsed */
+.hidden-logo {
+  display: none;
+}
+
+/* Hide the Main Menu text when sidebar is collapsed */
+.title {
+  transition: opacity 0.3s ease;
+}
+
+.hidden-sidebar .title {
+  // opacity: 0;
+  // transition: opacity 0.3s ease;
+  display: none; /* Ensure it's fully hidden */
+}
+
+/* Adjust the navigation item when the sidebar is collapsed */
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px; /* Adjust padding */
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item img {
+  width: 24px;
+  height: 24px;
+  transition: width 0.3s ease,  0.3s ease; /* Smooth transition for icon size */
+}
+
+.hidden-sidebar .nav-item img {
+  width: 24px;
+  height: 24px; /* Keep icons visible when collapsed */
+  // background-color: ;
+}
+
+/* Collapse text when sidebar is hidden */
+.nav-text {
+  margin-left: 10px; /* Space between icon and text */
+  white-space: nowrap;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.hidden-sidebar .nav-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+// /* Tooltip-like effect on hover when the sidebar is collapsed */
+// .hidden-sidebar .nav-item:hover::before {
+//   content: attr(title); /* Use the title attribute for tooltip */
+//   position: absolute;
+//   left: 70px; /* Show text to the right of the collapsed sidebar */
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background-color: #ff007b;
+//   color: white;
+//   padding: 5px 10px;
+//   border-radius: 5px;
+//   white-space: nowrap;
+//   z-index: 100;
+// }
+
+// .hidden-sidebar .nav-item:hover::after {
+//   content: '';
+//   position: absolute;
+//   left: 65px;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   width: 0;
+//   height: 0;
+//   border-left: 5px solid #ff007b;
+//   border-top: 5px solid transparent;
+//   border-bottom: 5px solid transparent;
+//   z-index: 100;
+// }
+
+/* Sidebar toggle icon transition */
+.toggle-icon {
+  transition: transform 0.3s ease; /* Smooth transition for the toggle arrow */
+  // margin-top: 45px;
+  margin-bottom: 10px;
+}
+.flipped .toggle-icon{
+  transition: transform 0.3s ease; /* Smooth transition for the toggle arrow */
+// margin-bottom: 100px;
+// margin-right: 100px;
+}
+
+.flipped {
+  transform: rotate(180deg); /* Rotates the icon 180 degrees */
+}
+

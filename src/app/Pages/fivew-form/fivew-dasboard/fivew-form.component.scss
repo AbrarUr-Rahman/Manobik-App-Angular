@@ -1,185 +1,192 @@
 .user-list-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
 
-    .header-section {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-bottom: 20px;
+  .header-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
 
-        .controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-            .search-container {
-                position: relative;
+      .search-container {
+        position: relative;
 
-                .search-input {
-                    padding: 8px 12px 8px 35px;
-                    /* Adjusted padding for icon space */
-                    border: 1px solid #ddd;
-                    border-radius: 8px;
-                }
-
-                .search-icon {
-                    position: absolute;
-                    left: 10px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 18px;
-                    height: 18px;
-                    pointer-events: none;
-                }
-            }
-
-            .filter-button {
-                padding: 8px 12px 8px 35px;
-                /* Adjusted padding for icon space */
-                border-radius: 8px;
-                font-size: 0.9rem;
-                font-weight: bold;
-                cursor: pointer;
-                border: none;
-                background-color: #f3f3f3;
-                color: #555;
-                position: relative;
-
-                .filter-icon {
-                    position: absolute;
-                    left: 10px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 18px;
-                    height: 18px;
-                    pointer-events: none;
-                }
-            }
-
-            .create-button {
-                padding: 8px 12px;
-                border-radius: 8px;
-                font-size: 0.9rem;
-                font-weight: bold;
-                cursor: pointer;
-                border: none;
-                background-color: #ff007b;
-                color: white;
-            }
+        .search-input {
+          padding: 8px 12px 8px 35px;
+          /* Adjusted padding for icon space */
+          border: 1px solid #ddd;
+          border-radius: 8px;
         }
-    }
 
-    .table-container {
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-
-            th,
-            td {
-                padding: 12px 15px;
-                text-align: left;
-            }
-
-            th {
-                background-color: #f7f7f9;
-                font-weight: bold;
-                font-size: 0.9rem;
-                color: #555;
-            }
-
-            tbody tr:nth-child(even) {
-                background-color: #fff;
-            }
-
-            .user-info {
-                display: flex;
-                align-items: center;
-
-                .user-logo {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    margin-right: 8px;
-                }
-            }
-
-            .action-button {
-                background: none;
-                border: none;
-                font-size: 1.2rem;
-                color: #888;
-                cursor: pointer;
-            }
+        .search-icon {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 18px;
+          height: 18px;
+          pointer-events: none;
         }
-    }
+      }
 
-    .pagination {
+      .filter-button {
+        padding: 8px 12px 8px 35px;
+        /* Adjusted padding for icon space */
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        background-color: #f3f3f3;
+        color: #555;
+        position: relative;
+
+        .filter-icon {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 18px;
+          height: 18px;
+          pointer-events: none;
+        }
+      }
+
+      .create-button {
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        background-color: #ff007b;
+        color: white;
+      }
+    }
+  }
+
+  .table-container {
+    border-radius: 12px;
+    overflow: hidden;
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: center;
+        background-color: white;
+        border: none;
+
+      }
+
+      th {
+        background-color: #f7f7f9;
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fff;
+      }
+
+      .user-info {
         display: flex;
-        justify-content: space-between;
         align-items: center;
 
-        .show-entries {
-            padding: 6px 12px;
-            border-radius: 8px;
-            background-color: #f3f3f3;
-            border: none;
-            font-size: 0.9rem;
+        .user-logo {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          margin-right: 8px;
         }
+      }
 
-        span {
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .pagination-controls {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .page-button,
-        .page-number {
-            padding: 6px 12px;
-            border-radius: 50%;
-            background-color: #f3f3f3;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .page-number.active {
-            background-color: #ff007b;
-            color: white;
-        }
+      .action-button {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        color: #888;
+        cursor: pointer;
+      }
     }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .show-entries {
+      padding: 6px 12px;
+      border-radius: 8px;
+      background-color: #f3f3f3;
+      border: none;
+      font-size: 0.9rem;
+    }
+
+    span {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .pagination-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-button,
+    .page-number {
+      padding: 6px 12px;
+      border-radius: 50%;
+      background-color: #f3f3f3;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .page-number.active {
+      background-color: #ff007b;
+      color: white;
+    }
+  }
 }
 .status-pending {
-    background-color: #fffaeb;
-    border: 1px solid #e4e7ec; 
-    color: #fab75e; /* Darker yellow text */
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    width: fit-content;
-    gap: 9px;
-  }
-  
-  .status-verified {
-    background-color: #ecfdf3; /* Light green background */
-    border: 1px solid #e4e7ec; /* Green border */
-    color: #039855; /* Darker green text */
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    width: fit-content;
-  }
-  
+  background-color: red;
+  border: 1px solid #e4e7ec;
+  color: #fab75e; /* Darker yellow text */
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  // width: fit-content;
+  height: 20px;
+  width: 20px;
+//   gap: 9px;
+font-size: 15px;
+}
+
+.status-verified {
+    font-size: 15px;
+    // display: inline-block;
+//    background-color: green; /* Light green background */
+  border: 1px solid #e4e7ec; /* Green border */
+  color: #039855; /* Darker green text */
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+}

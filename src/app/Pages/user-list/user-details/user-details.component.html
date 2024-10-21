@@ -7,27 +7,27 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div class="bg-gray-100 p-4 rounded-lg">
         <label class="text-sm text-gray-500 mb-1 block">Organization</label>
-        <p class="text-base font-semibold text-gray-800">BRAC</p>
+        <p class="text-base font-semibold text-gray-800">{{selectedUser.orgname}}</p>
       </div>
       <div class="bg-gray-100 p-4 rounded-lg">
         <label class="text-sm text-gray-500 mb-1 block">User Role</label>
-        <p class="text-base font-semibold text-gray-800">Admin</p>
+        <p class="text-base font-semibold text-gray-800">{{selectedUser.userRole}}</p>
       </div>
       <div class="bg-gray-100 p-4 rounded-lg">
         <label class="text-sm text-gray-500 mb-1 block">Designation</label>
-        <p class="text-base font-semibold text-gray-800">Manager</p>
+        <p class="text-base font-semibold text-gray-800">{{selectedUser.designation}}</p>
       </div>
       <div class="bg-gray-100 p-4 rounded-lg">
         <label class="text-sm text-gray-500 mb-1 block">User Name</label>
-        <p class="text-base font-semibold text-gray-800">Faiyaz Shahrear</p>
+        <p class="text-base font-semibold text-gray-800">{{selectedUser.name}}</p>
       </div>
       <div class="bg-gray-100 p-4 rounded-lg">
         <label class="text-sm text-gray-500 mb-1 block">Email</label>
-        <p class="text-base font-semibold text-gray-800">faiyaz&#64;brac.com</p>
+        <p class="text-base font-semibold text-gray-800">{{selectedUser.email}}</p>
       </div>
       <div class="bg-gray-100 p-4 rounded-lg">
         <label class="text-sm text-gray-500 mb-1 block">Phone No.</label>
-        <p class="text-base font-semibold text-gray-800">+880 1758475869</p>
+        <p class="text-base font-semibold text-gray-800">{{selectedUser.phone}}</p>
       </div>
     </div>
   </div>

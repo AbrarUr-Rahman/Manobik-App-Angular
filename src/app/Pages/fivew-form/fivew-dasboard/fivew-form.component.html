@@ -123,7 +123,7 @@
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
           <td>{{ user.location }}</td>
-          <td [ngClass]="{'status-pending':user.status=='Pending','status-verified':user.status=='Verified'}">{{ user.status }}</td> <!--! Checks to see conditional status boxes-->
+          <td [ngClass]="{'status-pending':user.status=='Pending','status-verified':user.status=='Verified'}" class="p-10">{{ user.status }}</td> <!--! Checks to see conditional status boxes-->
          
           <td>
             <button class="action-button">...</button>

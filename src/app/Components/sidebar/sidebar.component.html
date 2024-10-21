@@ -106,7 +106,7 @@
   </div>
 
   <!-- Logo -->
-  <img src="assets/images/logo.png" alt="Logo" class="sidebar-logo w-24 mb-5" />
+  <img src="assets/images/logo.png" alt="Logo" class="sidebar-logo w-24 mb-5" [ngClass]="{ 'hidden-logo': !isSidebarVisible }" />
 
   <!-- Navigation Menu -->
   <nav class="nav-menu flex flex-col w-full pl-5">
@@ -117,42 +117,51 @@
       routerLink="/profile"
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
+      title="Dashboard"
+      (click)="onNavItemClicked($event)"
     >
       <img src="../../../assets/images/dashboard.png" alt="dashboard-icon" class="w-5 h-5" />
-      &nbsp;&nbsp;&nbsp;Dashboard
+      <span class="nav-text">&nbsp;&nbsp;&nbsp;Dashboard</span>
     </a>
     <a
       routerLink="/fivew-form"
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
+      title="5W Form Data"
+      (click)="onNavItemClicked($event)"
     >
       <img src="../../../assets/images/document-text.png" alt="5wform-icon" class="w-5 h-5" />
-      &nbsp;&nbsp;&nbsp;5W Form Data
+      <span class="nav-text">&nbsp;&nbsp;&nbsp;5W Form Data</span>
     </a>
     <a
       routerLink="/plan-list"
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
+      title="Plan"
+      (click)="onNavItemClicked($event)"
     >
       <img src="../../../assets/images/clipboard-text.png" alt="plan-icon" class="w-5 h-5" />
-      &nbsp;&nbsp;&nbsp;Plan
+      <span class="nav-text">&nbsp;&nbsp;&nbsp;Plan</span>
     </a>
     <a
       routerLink="/organization"
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
+      title="Organization"
+      (click)="onNavItemClicked($event)"
     >
       <img src="../../../assets/images/buildings.png" alt="org-icon" class="w-5 h-5" />
-      &nbsp;&nbsp;&nbsp;Organization
+      <span class="nav-text">&nbsp;&nbsp;&nbsp;Organization</span>
     </a>
     <a
       routerLink="/user-list"
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
+      title="User Management"
+      (click)="onNavItemClicked($event)"
     >
       <img src="../../../assets/images/people.png" alt="people-icon" class="w-5 h-5" />
-      &nbsp;&nbsp;&nbsp;User Management
+      <span class="nav-text">&nbsp;&nbsp;&nbsp;User Management</span>
     </a>
   </nav>
 </div>
-
