@@ -14,7 +14,7 @@ export class SidebarComponent
 
 {
  
-  isSidebarVisible:boolean = false;
+  isSidebarVisible:boolean = true;
   @Output() sidebarToggled = new EventEmitter<boolean>();
   
 
@@ -24,6 +24,8 @@ export class SidebarComponent
   }
    // Ensure clicking on icons doesn't toggle the sidebar
    onNavItemClicked(event: MouseEvent) {
+    
+    event.preventDefault();
     event.stopPropagation(); // Prevent the sidebar from toggling when clicking on icons
   }
 }
