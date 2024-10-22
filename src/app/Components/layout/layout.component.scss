@@ -18,12 +18,12 @@
 // }
 
 .main-content {
-    margin-left: 250px; /* Full sidebar width */
+    margin-left: 240px; /* Full sidebar width */
     transition: margin-left 0.3s ease;
   
     &.expanded {
       
-      margin-left: 100px; /* Adjust margin when sidebar is hidden */
+      margin-left: 80px; /* Adjust margin when sidebar is hidden */
 
       .header{
         margin-left: 20px;

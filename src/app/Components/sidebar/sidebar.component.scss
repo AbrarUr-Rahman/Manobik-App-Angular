@@ -158,7 +158,10 @@
 .nav-item:hover::after {
   width: 3px; 
 }
+a.active{
+@apply bg-pink-50
 
+}
 
 .hidden-sidebar .nav-item::after {
   width: 0;
