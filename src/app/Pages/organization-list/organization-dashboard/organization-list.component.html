@@ -88,7 +88,12 @@
         class="search-input"
         [(ngModel)]="searchTerm"
       />
-      <button class="filter-button" (click)="toggleFilter()">Filter</button>
+      <button class="filter-button" (click)="toggleFilter()">
+        <img
+        src="../../../assets/images/filter-icon.png"
+        alt="Filter Icon"
+        class="icon filter-icon"
+      />Filter</button>
       <button class="create-button">+ Create Organization</button>
     </div>
   </div>
@@ -96,24 +101,29 @@
   <!--# Filter PopUP -->
   <div class="filter-modal" [ngClass]="{ active: isFilterVisible }">
     <h3>Filter Organizations</h3>
+
+    <!-- Filter by Organization Name -->
     <div class="filter-group">
-      <label for="headFilter">Head of Organization</label>
-      <select id="headFilter" [(ngModel)]="headFilter">
+      <label for="orgFilter">Organization Name</label>
+      <select id="orgFilter" [(ngModel)]="orgNameFilter">
         <option value="">All</option>
-        <option *ngFor="let org of organizations" [value]="org.head">
-          {{ org.head }}
+        <option *ngFor="let org of organizations" [value]="org.name">
+          {{ org.name }}
         </option>
       </select>
     </div>
+
+    <!-- Filter by Location
     <div class="filter-group">
-      <label for="emailFilter">Email</label>
-      <select id="emailFilter" [(ngModel)]="emailFilter">
+      <label for="locationFilter">Location</label>
+      <select id="locationFilter" [(ngModel)]="locationFilter">
         <option value="">All</option>
-        <option *ngFor="let org of organizations" [value]="org.email">
-          {{ org.email }}
+        <option *ngFor="let loc of uniqueLocations()" [value]="loc">
+          {{ loc }}
         </option>
       </select>
-    </div>
+    </div> -->
+
     <button class="apply-button" (click)="applyFilters()">Apply</button>
     <button class="clear-button" (click)="clearFilters()">Clear All</button>
   </div>
@@ -128,6 +138,7 @@
           <th>Email</th>
           <th>Phone</th>
           <th>Head of the Organization</th>
+          <!-- <th>Location</th> -->
           <th>User Count</th>
           <th>Action</th>
         </tr>
@@ -149,6 +160,7 @@
           <td>{{ org.email }}</td>
           <td>{{ org.phone }}</td>
           <td>{{ org.head }}</td>
+          <!-- <td>{{ org.location }}</td> -->
           <td>{{ org.userCount }}</td>
           <td class="p-3 relative">
             <button
@@ -161,7 +173,7 @@
             <!-- Action Menu -->
             <div
               *ngIf="actionMenuIndex === i"
-              class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48"
+              class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48 z-10 "
             >
               <ul class="text-sm">
                 <li
@@ -186,10 +198,6 @@
                   />
                   <span>Edit</span>
                 </li>
-                <!-- <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="deleteOrganization(org)">
-                  <img src="assets/icons/delete-icon.png" alt="Delete Icon" class="w-4 h-4 mr-2" />
-                  <span>Delete</span>
-                </li> -->
               </ul>
             </div>
           </td>
@@ -198,9 +206,19 @@
     </table>
   </div>
 
-  <!--# Pagination (if necessary) -->
+  <!--# Pagination -->
   <div class="pagination">
     <button class="show-entries">Show 10</button>
-    <span>Showing 1 to 10 of {{ filteredOrganizations().length }} entries</span>
+    <span>Showing 1 to 10 of 50 entries</span>
+    <div class="pagination-controls">
+      <button class="page-button">&lt;</button>
+      <button class="page-number active">1</button>
+      <button class="page-number">2</button>
+      <button class="page-number">3</button>
+      <span>...</span>
+      <button class="page-number">10</button>
+      <button class="page-button">&gt;</button>
+    </div>
   </div>
 </div>
+

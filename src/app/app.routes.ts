@@ -203,5 +203,10 @@ export const routes: Routes = [
         data: { title: 'Test Layout' },
       },
     ],
+    
+  },
+  {
+   path:'dashboard',component:LayoutComponent,data:{title:'DashBoard'}
+    
   },
 ];

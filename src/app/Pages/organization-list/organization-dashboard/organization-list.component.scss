@@ -199,6 +199,29 @@
         }
     }
 }
+.filter-button {
+    padding: 8px 12px 8px 35px;
+    /* Adjusted padding for icon space */
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    background-color: #f3f3f3;
+    color: #555;
+    position: relative;
+
+    .filter-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+    }
+  }
 
 // .header-section {
 //     display: flex;

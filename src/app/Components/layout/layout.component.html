@@ -12,15 +12,18 @@
 </div> -->
 <!--! TailWind  -->
 <!-- layout.component.html -->
- <div class="layout-container flex">
+<div class="layout-container flex">
   <app-sidebar (sidebarToggled)="onSidebarToggled($event)"></app-sidebar>
-  <div class="main-content flex-1 ml-[250px] flex flex-col" [ngClass]="{ 'expanded': !isSidebarVisible }">
+  <div
+    class="main-content flex-1 ml-[250px] flex flex-col"
+    [ngClass]="{ expanded: !isSidebarVisible }"
+  >
     <!-- <app-header [title]="title"></app-header> -->
-    <app-header [title]="title"></app-header>
-   <!-- Bind dynamic title  -->
+    <div class="header ml-10"><app-header [title]="title"></app-header></div>
+    <!-- Bind dynamic title  -->
     <div class="content-area p-5 flex-1 bg-gray-100">
       <router-outlet></router-outlet>
-       <!-- Dynamic content area  -->
+      <!-- Dynamic content area  -->
     </div>
   </div>
-</div> 
+</div>

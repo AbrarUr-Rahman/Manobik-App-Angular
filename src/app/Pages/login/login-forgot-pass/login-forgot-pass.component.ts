@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class LoginForgotPassComponent {
   email: string = '';
   constructor(private router: Router) {}
-  goSuccess() {
-    this.router.navigate(['/login/success']);
+  goMail() {
+    this.router.navigate(['/login/check-mail']);
     //! email validation
     // const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i;
 

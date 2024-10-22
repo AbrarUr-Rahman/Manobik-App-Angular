@@ -103,8 +103,11 @@
 }
 .hidden-sidebar {
   width: 80px; /* Sidebar width when collapsed */
+
   
 }
+
+
 
 /* Hide the logo when sidebar is collapsed */
 .hidden-logo {
@@ -122,13 +125,49 @@
   display: none; /* Ensure it's fully hidden */
 }
 
-/* Adjust the navigation item when the sidebar is collapsed */
+//// Adjust the navigation item when the sidebar is collapsed */
+
+// // .nav-item {
+// //   display: flex;
+// //   align-items: center;
+// //   padding: 12px 10px; /* Adjust padding */
+// //   transition: all 0.3s ease-in-out;
+
+// // }
+// /* Add this to your existing CSS */
+
 .nav-item {
+  position: relative; /* Make the nav-item the containing block for the pseudo-element */
   display: flex;
   align-items: center;
-  padding: 12px 10px; /* Adjust padding */
+  padding: 12px 10px;
   transition: all 0.3s ease-in-out;
 }
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  right: 0; 
+  top: 0;
+  bottom: 0;
+  width: 0; 
+  background-color: #ff007b; 
+  // transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 3px; 
+}
+
+
+.hidden-sidebar .nav-item::after {
+  width: 0;
+}
+
+.hidden-sidebar .nav-item:hover::after {
+  width: 3px; 
+}
+
 
 .nav-item img {
   width: 24px;
@@ -140,6 +179,9 @@
   width: 24px;
   height: 24px; /* Keep icons visible when collapsed */
   // background-color: ;
+  &:hover{
+    @apply bg-pink-50;
+  }
 }
 
 /* Collapse text when sidebar is hidden */

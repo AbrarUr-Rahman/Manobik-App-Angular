@@ -1,90 +1,100 @@
 <!--!TailWind  -->
-<div class="p-6 text-gray-800">
-  <!-- Header Section -->
-  <div class="flex justify-end items-center mb-5">
-    <div class="flex items-center gap-4">
-      <input type="text" placeholder="Search..." class="px-4 py-2 border border-gray-300 rounded-lg" />
-      <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200">Filter</button>
-      <button class="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700">Download Format</button>
-      <button class="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700" (click)="navigateToCreateUser()">+ Create User</button>
+<div class="user-list-container">
+  <!--# Header Section -->
+  <div class="header-section ">
+    <div class="chat-icon ">
+      <img src="../../../../assets/images/chat-icon.png" alt="" >
+      <p class="pt-2 font-bold">All&nbsp;users</p>
+    </div>
+    <div class="controls ">
+      
+     <div class="right-side-controls ">
+      <input
+      type="text"
+      placeholder="Search..."
+      class="search-input mr-2"
+      [(ngModel)]="searchTerm"
+    />
+    <button class="filter-button" (click)="toggleFilter()">  <img
+      src="../../../assets/images/filter-icon.png"
+      alt="Filter Icon"
+      class="icon filter-icon"
+    />Filter</button>
+    <button class="create-button" (click)="navigateToCreateUser()">+ Create User</button>
+     </div>
     </div>
   </div>
 
-  <!-- User Table -->
-  <div class="rounded-lg shadow-lg overflow-hidden mb-6">
-    <table class="min-w-full table-auto">
-      <thead class="bg-gray-50">
+  <!--# Filter PopUP -->
+  <div class="filter-modal" [ngClass]="{ active: isFilterVisible }">
+    <h3>Filter Users</h3>
+    <div class="cross-img absolute right-5 top-8" (click)="applyFilters()">
+      <img src="../../../../assets/images/close-circle.png" alt="">
+    </div>
+    <!-- Filter by Organization Name -->
+    <div class="filter-group">
+      <label for="orgNameFilter">Organization Name</label>
+      <select id="orgNameFilter" [(ngModel)]="orgNameFilter">
+        <option value="">All</option>
+        <option *ngFor="let org of getUniqueOrgNames()" [value]="org">{{ org }}</option>
+      </select>
+    </div>
+
+    <!-- Filter by Designation -->
+    <div class="filter-group">
+      <label for="designationFilter">Designation</label>
+      <select id="designationFilter" [(ngModel)]="designationFilter">
+        <option value="">All</option>
+        <option *ngFor="let designation of getUniqueDesignations()" [value]="designation">{{ designation }}</option>
+      </select>
+    </div>
+
+    <div class="flex justify-between mt-4">
+      <button class="apply-button " (click)="applyFilters()">Apply</button>
+      <button class="clear-button" (click)="clearFilters()">Clear All</button>
+    </div>
+  </div>
+
+  <!--# User Table -->
+  <div class="table-container">
+    <table>
+      <thead>
         <tr>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">No</th>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">User Name</th>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">Organization Name</th>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">User Role</th>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">Designation</th>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">Email</th>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">Phone</th>
-          <th class="px-5 py-3 text-left text-sm font-semibold text-gray-600">Action</th>
+          <th>No</th>
+          <th>User Name</th>
+          <th>Organization Name</th>
+          <th>User Role</th>
+          <th>Designation</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Action</th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        <tr *ngFor="let user of users; let i = index">
-          <td class="px-5 py-4 text-sm">{{ i + 1 }}</td>
-          <td class="px-5 py-4">
-            <div class="flex items-center">
-              <img src="{{ user.logo }}" alt="user Logo" class="w-6 h-6 rounded-full mr-2" />
-              <span class="text-sm">{{ user.name }}</span>
+      <tbody>
+        <!--# Uses *ngFor to iterate over the filtered users array -->
+        <tr *ngFor="let user of filteredUsers(); let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.orgname }}</td>
+          <td>{{ user.userRole }}</td>
+          <td>{{ user.designation }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td class="p-3 relative">
+            <button class="text-lg text-gray-500 hover:text-gray-700" (click)="toggleActionMenu(i)">...</button>
+            <!-- Action Menu -->
+            <div *ngIf="actionMenuIndex === i" class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48 z-10">
+              <ul class="text-sm">
+                <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="viewDetails(user)">
+                  <img src="../../../../assets/images/eye.png" alt="View Icon" class="w-4 h-4 mr-2" />
+                  <span>View Details</span>
+                </li>
+                <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="editOrganization(user)">
+                  <img src="../../../../assets/images/pen.png" alt="Edit Icon" class="w-4 h-4 mr-2" />
+                  <span>Edit</span>
+                </li>
+              </ul>
             </div>
-          </td>
-
-          <!-- !Have to add org icon here -->
-          <td class="px-5 py-4">
-            <div class="flex items-center">
-              <img src="{{user.org_logo}}" alt="org Logo" class="w-6 h-6 rounded-full mr-2" />
-              <span class="text-sm">{{ user.orgname }}</span>
-            </div>
-          </td>
-          <!-- <td class="px-5 py-4 text-sm">{{ user.orgname }}</td> -->
-          <td class="px-5 py-4 text-sm">{{ user.userRole }}</td>
-          <td class="px-5 py-4 text-sm">{{ user.designation }}</td>
-          <td class="px-5 py-4 text-sm">{{ user.email }}</td>
-          <td class="px-5 py-4 text-sm">{{ user.phone }}</td>
-          <td class="px-5 py-4">
-            <button class="text-gray-500 hover:text-gray-700 text-xl"  (click)="toggleActionMenu(i)">...</button>
-
-
-                  <!-- Action Menu -->
-                  <div
-                  *ngIf="actionMenuIndex === i"
-                  class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48"
-                >
-                  <ul class="text-sm">
-                    <li
-                      class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                      (click)="viewDetails(user)"
-                    >
-                      <img
-                        src="../../../../assets/images/eye.png"
-                        alt="View Icon"
-                        class="w-4 h-4 mr-2"
-                      />
-                      <span>View Details</span>
-                    </li>
-                    <li
-                      class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                      (click)="editOrganization(user)"
-                    >
-                      <img
-                        src="../../../../assets/images/pen.png"
-                        alt="Edit Icon"
-                        class="w-4 h-4 mr-2"
-                      />
-                      <span>Edit</span>
-                    </li>
-                    <!-- <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="deleteOrganization(org)">
-                      <img src="assets/icons/delete-icon.png" alt="Delete Icon" class="w-4 h-4 mr-2" />
-                      <span>Delete</span>
-                    </li> -->
-                  </ul>
-                </div>
           </td>
         </tr>
       </tbody>
@@ -92,20 +102,21 @@
   </div>
 
   <!-- Pagination -->
-  <div class="flex justify-between items-center">
-    <button class="px-4 py-2 bg-gray-100 rounded-lg">Show 10</button>
-    <span class="text-sm text-gray-600">Showing 1 to 10 of 50 entries</span>
-    <div class="flex items-center gap-2">
-      <button class="px-3 py-2 bg-gray-100 rounded-full">&lt;</button>
-      <button class="px-3 py-2 bg-pink-600 text-white rounded-full">1</button>
-      <button class="px-3 py-2 bg-gray-100 rounded-full">2</button>
-      <button class="px-3 py-2 bg-gray-100 rounded-full">3</button>
+  <div class="pagination">
+    <button class="show-entries">Show 10</button>
+    <span>Showing 1 to 10 of 50 entries</span>
+    <div class="pagination-controls">
+      <button class="page-button">&lt;</button>
+      <button class="page-number active">1</button>
+      <button class="page-number">2</button>
+      <button class="page-number">3</button>
       <span>...</span>
-      <button class="px-3 py-2 bg-gray-100 rounded-full">10</button>
-      <button class="px-3 py-2 bg-gray-100 rounded-full">&gt;</button>
+      <button class="page-number">10</button>
+      <button class="page-button">&gt;</button>
     </div>
   </div>
 </div>
+
 
 <!--!TailWind  -->
 <!-- <div class="user-list-container"> -->

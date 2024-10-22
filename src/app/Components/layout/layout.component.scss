@@ -22,8 +22,12 @@
     transition: margin-left 0.3s ease;
   
     &.expanded {
-      margin-left: 0; /* Adjust margin when sidebar is hidden */
-      margin-left: 70px; 
+      
+      margin-left: 100px; /* Adjust margin when sidebar is hidden */
+
+      .header{
+        margin-left: 20px;
+      }
     }
   }
   

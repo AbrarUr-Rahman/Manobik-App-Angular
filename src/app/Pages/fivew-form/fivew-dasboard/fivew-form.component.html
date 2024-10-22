@@ -96,7 +96,35 @@
       <button class="create-button" (click)="submitForm()">+ Submit 5w Form</button>
     </div>
   </div>
+ <!--# Filter PopUP -->
+ <!-- <div class="filter-modal" [ngClass]="{ active: isFilterVisible }">
+  <h3>Filter Users</h3>
+  <div class="cross-img absolute right-5 top-8" (click)="applyFilters()">
+    <img src="../../../../assets/images/close-circle.png" alt="">
+  </div> -->
+  <!-- Filter by Organization Name -->
+  <!-- <div class="filter-group">
+    <label for="orgNameFilter">Organization Name</label>
+    <select id="orgNameFilter" [(ngModel)]="orgNameFilter">
+      <option value="">All</option>
+      <option *ngFor="let org of getUniqueLocation()" [value]="org">{{ org }}</option>
+    </select>
+  </div> -->
 
+  <!-- Filter by Designation -->
+  <!-- <div class="filter-group">
+    <label for="designationFilter">Designation</label>
+    <select id="designationFilter" [(ngModel)]="designationFilter">
+      <option value="">All</option>
+      <option *ngFor="let designation of getStatus()" [value]="designation">{{ designation }}</option>
+    </select>
+  </div> -->
+
+  <!-- <div class="flex justify-between mt-4">
+    <button class="apply-button " (click)="applyFilters()">Apply</button>
+    <button class="clear-button" (click)="clearFilters()">Clear All</button>
+  </div>
+</div> -->
   <!-- User Table -->
   <div class="table-container">
     <table>

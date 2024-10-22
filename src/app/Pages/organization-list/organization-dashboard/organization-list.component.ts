@@ -34,7 +34,10 @@ export class OrganizationListComponent {
   searchTerm: string = '';
   headFilter: string = '';
   emailFilter: string = '';
+  orgNameFilter: string = '';
+  locationFilter: string = '';
   isFilterVisible: boolean = false;
+  
 
   // Property to track which action menu is open
   actionMenuIndex: number | null = null;
@@ -48,24 +51,38 @@ export class OrganizationListComponent {
   applyFilters() {
     this.isFilterVisible = false;
   }
-
+  // Generate a list of unique locations for filtering
+  // uniqueLocations() {
+  //   const locations = this.organizations.map(org => org.location);
+  //   return Array.from(new Set(locations)); // Return unique locations
+  // }
   // Method to clear filters
   clearFilters() {
     this.headFilter = '';
     this.emailFilter = '';
     this.searchTerm = '';
   }
-
   // Method to filter organizations based on user input
   filteredOrganizations() {
     return this.organizations.filter(org => {
       return (
         (!this.searchTerm || org.name.toLowerCase().includes(this.searchTerm.toLowerCase())) &&
-        (!this.headFilter || org.head === this.headFilter) &&
-        (!this.emailFilter || org.email === this.emailFilter)
+        (!this.orgNameFilter || org.name === this.orgNameFilter)
+         
+        // && (!this.locationFilter || org.location === this.locationFilter)
       );
     });
   }
+  // // Method to filter organizations based on user input
+  // filteredOrganizations() {
+  //   return this.organizations.filter(org => {
+  //     return (
+  //       (!this.searchTerm || org.name.toLowerCase().includes(this.searchTerm.toLowerCase())) &&
+  //       (!this.headFilter || org.head === this.headFilter) &&
+  //       (!this.emailFilter || org.email === this.emailFilter)
+  //     );
+  //   });
+  // }
 
   //! Method to toggle the action menu
   toggleActionMenu(index: number) {

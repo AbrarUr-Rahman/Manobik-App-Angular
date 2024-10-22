@@ -58,7 +58,7 @@ export class LayoutComponent implements OnInit {
     this.titleService.updateTitle(title); // Update title in TitleService
     this.titleServiceFromBrowser.setTitle(title); // Set the document title
   }
-  isSidebarVisible = false;
+  isSidebarVisible = true;
 
   onSidebarToggled(isVisible: boolean) {
     this.isSidebarVisible = isVisible;

@@ -95,8 +95,9 @@
     </a>
   </nav>
 </div>  -->
+
 <div
-  class="sidebar-container w-64 h-screen bg-white pt-5 flex flex-col items-center fixed"
+  class="border sidebar-container w-64 h-screen bg-white pt-5 flex flex-col items-center fixed"
   [ngClass]="{ 'hidden-sidebar': !isSidebarVisible }"
 >
   <!-- Toggle Icon -->
@@ -111,17 +112,18 @@
        [ngClass]="{ 'hidden-logo': !isSidebarVisible }" />
 
   <!-- Navigation Menu -->
-  <nav class="nav-menu flex flex-col w-full pl-5">
+  <nav class="nav-menu flex flex-col w-full ">
     <span class="title text-gray-500 text-sm px-7">
       <p>Main Menu</p>
     </span>
 
     <a
-      routerLink="/profile"
+      routerLink="/dashboard"
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
       title="Dashboard"
-      (click)="onNavItemClicked($event)"
+      
+      
     >
       <img src="../../../assets/images/dashboard.png" alt="dashboard-icon" class="w-5 h-5" />
       <span class="nav-text">&nbsp;&nbsp;&nbsp;Dashboard</span>
@@ -132,7 +134,7 @@
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
       title="5W Form Data"
-      (click)="onNavItemClicked($event)"
+      
     >
       <img src="../../../assets/images/document-text.png" alt="5wform-icon" class="w-5 h-5" />
       <span class="nav-text">&nbsp;&nbsp;&nbsp;5W Form Data</span>
@@ -143,7 +145,7 @@
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
       title="Plan"
-      (click)="onNavItemClicked($event)"
+      
     >
       <img src="../../../assets/images/clipboard-text.png" alt="plan-icon" class="w-5 h-5" />
       <span class="nav-text">&nbsp;&nbsp;&nbsp;Plan</span>
@@ -154,7 +156,7 @@
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
       title="Organization"
-      (click)="onNavItemClicked($event)"
+      
     >
       <img src="../../../assets/images/buildings.png" alt="org-icon" class="w-5 h-5" />
       <span class="nav-text">&nbsp;&nbsp;&nbsp;Organization</span>
@@ -165,7 +167,7 @@
       routerLinkActive="active"
       class="nav-item flex items-center py-2 px-5 text-gray-500 text-base hover:bg-pink-50 hover:text-pink-600"
       title="User Management"
-      (click)="onNavItemClicked($event)"
+      
     >
       <img src="../../../assets/images/people.png" alt="people-icon" class="w-5 h-5" />
       <span class="nav-text">&nbsp;&nbsp;&nbsp;User Management</span>

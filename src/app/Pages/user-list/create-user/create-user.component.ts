@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './create-user.component.scss'
 })
 export class CreateUserComponent {
+    private router=inject(Router)  
+  backToUser(){
+      this.router.navigate(['/user-list'])
 
+    }
 }
