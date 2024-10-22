@@ -27,7 +27,7 @@
               name="email"
               class="w-full p-3 border border-gray-300 rounded-md focus:border-pink-500 focus:outline-none"
             />
-              <div *ngIf="email.invalid && !email.touched" class="text-red-600 mb-1 flex items-start flex-row text-sm mt-2">
+              <div *ngIf="email.invalid && email.touched" class="text-red-600 mb-1 flex items-start flex-row text-sm mt-2">
               Please enter a valid email
             </div>
         
@@ -54,7 +54,7 @@
               class="w-full p-3 border border-gray-300 rounded-md focus:border-pink-500 focus:outline-none form-control"
             />
           </div>
-            @if(password.invalid && !password.touched ){
+            @if(password.invalid && password.touched ){
               <div class="text-red-600 mb-9 flex items-start flex-row text-sm">
                 Password must be at least 8 characters long
               </div>
