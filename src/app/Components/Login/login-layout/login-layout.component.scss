@@ -103,3 +103,37 @@
 //     }
 
 // }
+
+// .login-layout-container {
+//     @apply h-screen w-screen;
+//   }
+  
+//   .left-side,
+//   .left-side-mobile {
+//     @apply flex justify-center items-end bg-pink-100 overflow-hidden rounded-[20px];
+//   }
+  
+//   .right-side {
+//     @apply flex flex-col justify-between w-full h-full items-center px-5 lg:px-10 py-5 lg:py-10;
+//   }
+  
+//   .logo-container {
+//     @apply flex justify-start w-full;
+//   }
+  
+//   .form-container {
+//     @apply flex-grow flex flex-col justify-center items-center w-full;
+//   }
+  
+//   .footer {
+//     @apply hidden lg:block w-full text-center text-gray-500;
+//   }
+  
+
+// @media (min-width:640px){
+ 
+//     .login-layout-container{
+//         position: relative;
+//     }
+
+// }

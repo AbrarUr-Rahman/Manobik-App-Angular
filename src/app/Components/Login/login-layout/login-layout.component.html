@@ -1,25 +1,107 @@
-<div class="login-layout-container flex h-screen w-screen relative">
-  <!-- Left side with image -->
-  <div
-    class="left-side absolute top-10 left-10 rounded-[20px] bg-pink-100 flex justify-center items-center overflow-hidden"
-  >
-    <app-login-leftside></app-login-leftside>
-  </div>
+<!--! Original code without responsive  -->
+<div *ngIf="showContent">
+  <div class="login-layout-container flex h-screen w-screen relative max-sm:flex-col">
+    <!-- Left side with image -->
+    <div class="left-side absolute top-10 left-10 rounded-[20px] bg-pink-100 flex justify-center items-center overflow-hidden ">
+      <app-login-leftside></app-login-leftside>
+    </div>
 
-  <!-- Right side with form content -->
-  <div
-    class="right-side h-[944px] w-[480px] absolute top-10 left-[861px] flex flex-col justify-start items-center px-10 py-5 rounded-[20px] opacity-100"
-  >
-    <app-logo class="logo absolute top-5 left-5 w-[138px] h-[48px]"></app-logo>
-
-    <!-- Form content will be inserted here -->
-    <!-- <div class="flex flex-col items-center w-full  max-w-[400px] p-[30px] shadow-lg rounded-lg"> -->
-    <ng-content></ng-content>
-    <!-- </div> -->
-    <router-outlet></router-outlet>
-    <!-- Footer positioned at the bottom -->
-    <div class="footer absolute bottom-[1px] w-full text-center text-gray-500">
-      <app-footer></app-footer>
+    <!-- Right side with form content -->
+    <div
+      class="right-side h-[944px] w-[480px] absolute top-10 left-[861px] flex flex-col justify-start items-center px-10 py-5 rounded-[20px] opacity-100"
+    >
+      <app-logo class="logo absolute top-5 left-5 w-[138px] h-[48px]"></app-logo>
+      <ng-content></ng-content>
+      <router-outlet></router-outlet>
+      <div class="footer absolute bottom-[1px] w-full text-center text-gray-500">
+        <app-footer></app-footer>
+      </div>
     </div>
   </div>
 </div>
+
+<div *ngIf="!showContent" class="text-center mt-10">
+  <div class="h-screen flex flex-col justify-between items-center bg-pink-100 px-6">
+    <!-- Header with logo -->
+    <header class="w-full flex justify-center pt-5">
+      <img src="../../../../assets/images/mobile-top-logo.png" alt="Logo" class="h-12" /> 
+    </header>
+  
+    <!-- Sign In form container -->
+    <div class="w-full max-w-sm bg-white rounded-2xl shadow-lg p-6 text-center">
+   
+      <div class="content mr-20">
+        <router-outlet></router-outlet>
+        <ng-content ></ng-content>
+      </div>
+   
+  
+ 
+  
+    
+  
+    <!-- Footer with logo -->
+    <footer class="w-full text-center text-gray-500 py-6">
+      <img src="../../../../assets/images/mobile-manobik.png" alt="Footer Logo" class="h-16 mx-auto mb-3" /> 
+      <!-- Replace with your footer logo path -->
+     
+    </footer>
+  </div>
+  
+</div>
+
+<!--! Try code 1  -->
+ <!-- <div class="login-layout-container flex h-full w-full max-sm:flex-col max-sm:flex    ">  -->
+  <!-- Left side with image -->
+  <!-- <div
+    class="left-side absolute top-10 left-10 rounded-[20px] bg-pink-100 flex justify-center items-center overflow-hidden  max-sm:w-full max-sm:h-[239px]     max-sm:relative max-sm:mt-[370px] max-sm:mr-[30px]"
+  >
+    <app-login-leftside></app-login-leftside>
+  </div> -->
+
+  <!-- Right side with form content -->
+  <!-- <div
+    class="right-side h-[944px] w-[480px] absolute top-10 left-[861px] flex flex-col justify-start items-center px-10 py-5 rounded-[20px] opacity-100 max-sm:relative max-sm:mr-[400px]"
+  > -->
+    <!-- <app-logo class="logo absolute top-5 left-5 w-[138px] h-[48px] max-sm:relative max-sm:mb-40 "></app-logo> -->
+
+    <!-- Form content will be inserted here -->
+    <!-- <div class="flex flex-col items-center w-full  max-w-[400px] p-[30px] shadow-lg rounded-lg"> -->
+    <!-- <ng-content></ng-content> -->
+    <!-- </div> -->
+    <!-- <router-outlet></router-outlet> -->
+    <!-- Footer positioned at the bottom -->
+    <!-- <div class="footer absolute bottom-[1px] w-full text-center text-gray-500 max-sm:relative">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div> -->
+
+
+<!--! Try code 2  -->
+<!-- <div class="login-layout-container flex h-screen w-screen relative flex-col md:flex-col"> -->
+  <!-- Left side with image -->
+  <!-- <div
+    class="left-side absolute top-10 left-10 rounded-[20px] bg-pink-100 flex justify-center items-center overflow-hidden md:left-10 md:top-10 md:rounded-[20px] md:bg-pink-100 sm:bottom-0 sm:left-0 sm:h-[50%] sm:w-full"
+  >
+    <app-login-leftside></app-login-leftside>
+  </div> -->
+
+  <!-- Right side with form content -->
+  <!-- <div
+    class="right-side h-[944px] w-[480px] absolute top-10 left-[861px] flex flex-col justify-start items-center px-10 py-5 rounded-[20px] opacity-100 md:top-10 md:left-[861px] sm:w-full sm:h-[50%] sm:top-0 sm:left-0 sm:rounded-none sm:px-4 sm:py-3"
+  >
+    <app-logo
+      class="logo absolute top-5 left-5 w-[138px] h-[48px] md:top-5 md:left-5 sm:top-2 sm:left-2 sm:w-[100px] sm:h-[36px]"
+    ></app-logo> -->
+
+    <!-- Form content will be inserted here -->
+    <!-- <ng-content></ng-content>
+    <router-outlet></router-outlet> -->
+    
+    <!-- Footer positioned at the bottom -->
+    <!-- <div class="footer absolute bottom-[1px] w-full text-center text-gray-500 md:bottom-[1px] sm:hidden">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div> -->
