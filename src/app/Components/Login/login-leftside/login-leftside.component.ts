@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-login-leftside',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './login-leftside.component.scss'
 })
 export class LoginLeftsideComponent {
-
+  //! Faiyaz vai er teaching
+   @Input() classes:string = ''
 }

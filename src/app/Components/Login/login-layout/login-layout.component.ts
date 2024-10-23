@@ -17,27 +17,27 @@ import { FormsModule, NgForm } from '@angular/forms';
   templateUrl: './login-layout.component.html',
   styleUrls: ['./login-layout.component.scss']
 })
-export class LoginLayoutComponent implements OnInit {
-  showContent = true; // Default is to show the content
+export class LoginLayoutComponent  {
+  // showContent = true; // Default is to show the content
 
-  ngOnInit() {
-    this.checkWindowSize(); // Check window size when the component is initialized
-  }
+  // ngOnInit() {
+  //   this.checkWindowSize(); // Check window size when the component is initialized
+  // }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.checkWindowSize();
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event: Event) {
+  //   this.checkWindowSize();
+  // }
 
-  checkWindowSize() {
-    const windowWidth = window.innerWidth;
+  // checkWindowSize() {
+  //   const windowWidth = window.innerWidth;
 
-    if (windowWidth < 640) {
-      this.showContent = false; // Hide content if the screen is small
-    } else {
-      this.showContent = true; // Show content if the screen is large enough
-    }
-  }
+  //   if (windowWidth < 640) {
+  //     this.showContent = false; // Hide content if the screen is small
+  //   } else {
+  //     this.showContent = true; // Show content if the screen is large enough
+  //   }
+  // }
   
 }
 
