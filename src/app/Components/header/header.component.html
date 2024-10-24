@@ -2,7 +2,7 @@
 <!-- header.component.html -->
 <div class="header-container ">
   <h1 class="page-title flex-1 text-left text-2xl font-bold text-gray-800 ">{{ title }}</h1>
-  <div class="header-actions flex items-center gap-[15px]">
+  <div class="header-actions flex items-center gap-[15px] max-sm:mr-5">
     <!-- <div class="right-side">
       
     </div> -->
@@ -23,12 +23,15 @@
       alt="divider-icon"
       class="divider-icon "
     />
-    <img
-    src="assets/images/user-avatar.png"
-    alt="User Profile"
-    class="profile-icon w-9 h-9 rounded-[50%] cursor-pointer" (click)="goToDashboard()"
-  />
-  <p class="font-semibold text-base">Samsad</p>
+    <div class="icon">
+      <img
+      src="assets/images/user-avatar.png"
+      alt="User Profile"
+      class="profile-icon w-9 h-9 rounded-[50%] cursor-pointer " (click)="goToDashboard()"
+    />
+    <p class="font-semibold text-base max-sm:text-sm max-sm:mr-5">Samsad</p>
+    </div>
+   
 </div>
 </div>
 <!--!TailWInd  -->

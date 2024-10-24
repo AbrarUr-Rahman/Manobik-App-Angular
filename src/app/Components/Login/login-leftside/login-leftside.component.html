@@ -1,15 +1,25 @@
 <!--!Attempt 1  -->
 <!-- Left Side: Image and Logo -->
 <div
-  class="left-side flex-1 flex  items-start justify-center relative sm:h-full sm:w-[760px] rounded-[20px] ml-10" 
+  class="left-side flex-1 flex  items-start justify-center relative sm:h-full sm:w-[760px] rounded-[20px] sm:ml-10 " 
 >
   <!-- <div class="relative sm:w-[380px] sm:h-[239px] sm:top-[677px] sm:left-[-5px] sm:gap-0 sm:rounded-[24px] sm:opacity-0 
 md:w-[380px] md:h-[239px] md:top-[677px] md:left-[-5px] md:gap-0 md:rounded-[24px] md:opacity-0"> -->
+@if(showContent){
   <img
-    src="../../../../assets/images/manobik.svg"
-    alt="Background Image"
-    class="background-image sm:w-[760px] h-full object-cover rounded-[20px] max-sm:object-fill"
-  />
+  src="../../../../assets/images/manobik.png"
+  alt="Background Image"
+  class="background-image sm:w-[760px] h-[100px] w-full sm:h-full object-cover rounded-[20px] max-sm:object-contain "
+/>
+}
+@else {
+  <img
+  src="../../../../assets/images/mobile-manobik.png"
+  alt="Background Image"
+  class="background-image sm:w-[760px] h-[100px] w-full sm:h-full object-cover rounded-[20px] max-sm:object-contain "
+/>
+}
+ 
 </div>
 <!--!Attempt 2  -->
 <!-- Left Side: Image and Logo -->

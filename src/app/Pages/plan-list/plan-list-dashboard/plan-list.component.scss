@@ -1,142 +1,142 @@
-/* user-list.component.scss */
-.user-list-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
+// /* user-list.component.scss */
+// .user-list-container {
+//     padding: 20px;
+//     font-family: Arial, sans-serif;
+//     color: #333;
 
-    .header-section {
-        display: flex;
-        justify-content: flex-end;
-        /* Align items to the right */
-        align-items: center;
-        margin-bottom: 20px;
+//     .header-section {
+//         display: flex;
+//         justify-content: flex-end;
+//         /* Align items to the right */
+//         align-items: center;
+//         margin-bottom: 20px;
 
-        h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-right: auto;
-            /* Push the heading to the left */
-        }
+//         h1 {
+//             font-size: 1.5rem;
+//             font-weight: bold;
+//             margin-right: auto;
+//             /* Push the heading to the left */
+//         }
 
-        .controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+//         .controls {
+//             display: flex;
+//             align-items: center;
+//             gap: 10px;
+//         }
 
-        .search-input {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
+//         .search-input {
+//             padding: 8px 12px;
+//             border: 1px solid #ddd;
+//             border-radius: 8px;
+//         }
 
-        .filter-button,
-        .create-button {
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-        }
+//         .filter-button,
+//         .create-button {
+//             padding: 8px 12px;
+//             border-radius: 8px;
+//             font-size: 0.9rem;
+//             font-weight: bold;
+//             cursor: pointer;
+//             border: none;
+//         }
 
-        .filter-button {
-            background-color: #f3f3f3;
-            color: #555;
-        }
+//         .filter-button {
+//             background-color: #f3f3f3;
+//             color: #555;
+//         }
 
-        .create-button {
-            background-color: #ff007b;
-            color: white;
-        }
-    }
+//         .create-button {
+//             background-color: #ff007b;
+//             color: white;
+//         }
+//     }
 
-    .table-container {
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
+//     .table-container {
+//         border-radius: 12px;
+//         overflow: hidden;
+//         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+//         margin-bottom: 20px;
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+//         table {
+//             width: 100%;
+//             border-collapse: collapse;
 
-            th,
-            td {
-                padding: 12px 15px;
-                text-align: left;
-            }
+//             th,
+//             td {
+//                 padding: 12px 15px;
+//                 text-align: left;
+//             }
 
-            th {
-                background-color: #f7f7f9;
-                font-weight: bold;
-                font-size: 0.9rem;
-                color: #555;
-            }
+//             th {
+//                 background-color: #f7f7f9;
+//                 font-weight: bold;
+//                 font-size: 0.9rem;
+//                 color: #555;
+//             }
 
-            tbody tr:nth-child(even) {
-                background-color: #fff;
-            }
+//             tbody tr:nth-child(even) {
+//                 background-color: #fff;
+//             }
 
-            .user-info {
-                display: flex;
-                align-items: center;
+//             .user-info {
+//                 display: flex;
+//                 align-items: center;
 
-                .user-logo {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    margin-right: 8px;
-                }
-            }
+//                 .user-logo {
+//                     width: 24px;
+//                     height: 24px;
+//                     border-radius: 50%;
+//                     margin-right: 8px;
+//                 }
+//             }
 
-            .action-button {
-                background: none;
-                border: none;
-                font-size: 1.2rem;
-                color: #888;
-                cursor: pointer;
-            }
-        }
-    }
+//             .action-button {
+//                 background: none;
+//                 border: none;
+//                 font-size: 1.2rem;
+//                 color: #888;
+//                 cursor: pointer;
+//             }
+//         }
+//     }
 
-    .pagination {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+//     .pagination {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
 
-        .show-entries {
-            padding: 6px 12px;
-            border-radius: 8px;
-            background-color: #f3f3f3;
-            border: none;
-            font-size: 0.9rem;
-        }
+//         .show-entries {
+//             padding: 6px 12px;
+//             border-radius: 8px;
+//             background-color: #f3f3f3;
+//             border: none;
+//             font-size: 0.9rem;
+//         }
 
-        span {
-            font-size: 0.9rem;
-            color: #777;
-        }
+//         span {
+//             font-size: 0.9rem;
+//             color: #777;
+//         }
 
-        .pagination-controls {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+//         .pagination-controls {
+//             display: flex;
+//             align-items: center;
+//             gap: 8px;
+//         }
 
-        .page-button,
-        .page-number {
-            padding: 6px 12px;
-            border-radius: 50%;
-            background-color: #f3f3f3;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
+//         .page-button,
+//         .page-number {
+//             padding: 6px 12px;
+//             border-radius: 50%;
+//             background-color: #f3f3f3;
+//             border: none;
+//             cursor: pointer;
+//             font-size: 0.9rem;
+//         }
 
-        .page-number.active {
-            background-color: #ff007b;
-            color: white;
-        }
-    }
-}
+//         .page-number.active {
+//             background-color: #ff007b;
+//             color: white;
+//         }
+//     }
+// }

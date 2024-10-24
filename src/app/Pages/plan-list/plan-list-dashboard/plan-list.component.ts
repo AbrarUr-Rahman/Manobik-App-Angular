@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-plan-list',
   standalone: true,
@@ -8,6 +9,8 @@ import { CommonModule, NgFor } from '@angular/common';
   styleUrl: './plan-list.component.scss'
 })
 export class PlanListComponent {
+
+  private router=inject(Router);
   users = [
     { name: 'Khalid',phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/khalid.png' },
     { name: 'Nahid ',phone: '+880 1958674857',submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka',logo: 'assets/images/nahid.png' },
@@ -20,4 +23,8 @@ export class PlanListComponent {
     { name: 'Samsad ',phone: '+880 1958674857', submission_date: "May22,2024",location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/samsad.png' },
     { name: 'Faruque ',phone: '+880 1958674857',submission_date: "May22,2024", location:'Monipur,Mirpur,Dhaka', logo: 'assets/images/faruque.png' },
   ];
+
+  goDetails(){
+      this.router.navigate(['/plan-list/details'])
+  }
 }

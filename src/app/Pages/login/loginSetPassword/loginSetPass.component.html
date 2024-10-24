@@ -1,26 +1,23 @@
 <!--!Tailwind  -->
-<div class="set-password-container h-[594px] w-[480px] mt-100">
-  <div class="setpass-right-side ">
-    <div class="header-text">
-      <div class="flex items-center justify-center">
-        <img
-          src="../../../../assets/images/lock-icon.png"
-          alt="Lock Icon"
-          class="lock-icon"
-        />
+<div class="flex items-center justify-center  sm:h-[594px] sm:w-[480px] sm:mt-[100px] border border-gray-200 rounded-2xl bg-white max-sm:ml-12 max-sm:mt-8">
+  <div class="flex flex-col items-center justify-center flex-1 sm:pb-[200px] sm:pt-[150px] bg-white">
+    <!-- Header Text and Icon -->
+    <div class="text-center mb-10">
+      <div class="flex items-center justify-center mb-4">
+        <img src="../../../../assets/images/lock-icon.png" alt="Lock Icon" class="w-14 h-14" />
       </div>
-
-      <h2>Set new password</h2>
-      <div class="setup-text">
-        <span>Create your password to complete your </span>
+      <h2 class="text-2xl font-semibold text-gray-800">Set new password</h2>
+      <div class="flex flex-col items-center justify-center text-gray-500 text-base mt-2">
+        <span>Create your password to complete your</span>
         <span>account setup</span>
       </div>
     </div>
 
-    <div class="form-container">
+    <!-- Form Section -->
+    <div class="w-4/5 text-center">
       <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="password">Password</label>
+        <div class="mb-5 text-left">
+          <label for="password" class="block text-sm text-gray-600 mb-2">Password</label>
           <input
             type="password"
             id="password"
@@ -29,11 +26,12 @@
             minlength="8"
             [(ngModel)]="password"
             name="password"
+            class="w-full p-3 border border-gray-300 rounded-md focus:border-pink-500 focus:outline-none"
           />
         </div>
 
-        <div class="form-group">
-          <label for="confirm-password">Confirm password</label>
+        <div class="mb-5 text-left">
+          <label for="confirm-password" class="block text-sm text-gray-600 mb-2">Confirm password</label>
           <input
             type="password"
             id="confirm-password"
@@ -42,28 +40,30 @@
             minlength="8"
             [(ngModel)]="confirmPassword"
             name="confirmPassword"
+            class="w-full p-3 border border-gray-300 rounded-md focus:border-pink-500 focus:outline-none"
           />
-          <span
-            class="password-requirement">
-            <!-- *ngIf="password && confirmPassword && password !== confirmPassword" -->  
-             <!--!Template forms  -->
-             
-            >Passwords do not match</span
-          >
-          <span class="password-requirement">
-            Must be at least 8 characters long
+          <!-- Example for showing error message -->
+          <span class="text-sm text-red-600 mt-2 block" *ngIf="password && confirmPassword && password !== confirmPassword">
+            Passwords do not match
           </span>
+          <span class="text-sm text-gray-500 mt-1 block">Must be at least 8 characters long</span>
         </div>
 
-        <button type="submit" class="submit-button">Reset password</button>
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="w-full p-3 bg-pink-600 text-white font-bold rounded-md hover:bg-pink-500 transition duration-300 cursor-pointer"
+        >
+          Reset password
+        </button>
       </form>
 
-      <a href="/login" class="back-link">← Back to log in</a>
-      <!--@ <a routerLink="/login/sign-in" class="back-link">← Back to log in</a> -->
-      <!-- @</div> -->
+      <!-- Back Link -->
+      <a href="/login" class="block mt-5 text-gray-600 text-sm hover:underline">← Back to log in</a>
     </div>
   </div>
 </div>
+
 
 <!--!Tailwind  -->
 <!-- <div class="flex h-[594px] w-[480px] relative border border-gray-300 rounded-2xl mt-10">

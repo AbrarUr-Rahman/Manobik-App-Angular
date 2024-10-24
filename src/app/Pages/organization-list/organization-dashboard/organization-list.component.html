@@ -78,124 +78,85 @@
 </div> -->
 
 <!--!TailWInd  -->
-<div class="organization-list-container">
-  <!--# Header Section -->
-  <div class="header-section">
-    <div class="controls">
+<div class="organization-list-container p-4 sm:p-5 font-sans text-gray-800 max-sm:p-0">
+  <!-- Header Section -->
+  <div class="header-section flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 gap-3 sm:gap-0">
+    <div class="right-side-controls flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full sm:w-auto">
       <input
         type="text"
         placeholder="Search..."
-        class="search-input"
+        class="search-input p-2 w-full sm:w-auto border border-gray-300 rounded-md"
         [(ngModel)]="searchTerm"
       />
-      <button class="filter-button" (click)="toggleFilter()">
-        <img
-        src="../../../assets/images/filter-icon.png"
-        alt="Filter Icon"
-        class="icon filter-icon"
-      />Filter</button>
-      <button class="create-button">+ Create Organization</button>
+      <button class="filter-button flex items-center gap-2 p-2 rounded-md bg-gray-100 hover:bg-gray-200 w-full sm:w-auto" (click)="toggleFilter()">
+        <img src="../../../assets/images/filter-icon.png" alt="Filter Icon" class="w-4 h-4">
+        Filter
+      </button>
+      <button class="create-button bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 w-full sm:w-auto" (click)="navigateToCreateOrganization()">+ Create Organization</button>
     </div>
   </div>
 
-  <!--# Filter PopUP -->
-  <div class="filter-modal" [ngClass]="{ active: isFilterVisible }">
-    <h3>Filter Organizations</h3>
-
-    <!-- Filter by Organization Name -->
-    <div class="filter-group">
-      <label for="orgFilter">Organization Name</label>
-      <select id="orgFilter" [(ngModel)]="orgNameFilter">
+  <!-- Filter Modal -->
+  <div class="filter-modal fixed sm:absolute top-20 right-2 sm:right-5 sm:w-56 w-full bg-white shadow-lg p-4 rounded-lg z-10 max-w-xs"
+       [ngClass]="{ 'hidden': !isFilterVisible, 'block': isFilterVisible }">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-lg font-semibold">Filter Organizations</h3>
+      <div class="cross-img cursor-pointer" (click)="toggleFilter()">
+        <img src="../../../../assets/images/close-circle.png" alt="Close Filter">
+      </div>
+    </div>
+    <div class="filter-group mb-4">
+      <label for="orgNameFilter" class="block mb-1 text-sm sm:text-base">Organization Name</label>
+      <select id="orgNameFilter" class="w-full p-2 border border-gray-300 rounded-md" [(ngModel)]="orgNameFilter">
         <option value="">All</option>
-        <option *ngFor="let org of organizations" [value]="org.name">
-          {{ org.name }}
-        </option>
+        <option *ngFor="let org of organizations" [value]="org.name">{{ org.name }}</option>
       </select>
     </div>
 
-    <!-- Filter by Location
-    <div class="filter-group">
-      <label for="locationFilter">Location</label>
-      <select id="locationFilter" [(ngModel)]="locationFilter">
-        <option value="">All</option>
-        <option *ngFor="let loc of uniqueLocations()" [value]="loc">
-          {{ loc }}
-        </option>
-      </select>
-    </div> -->
-
-    <button class="apply-button" (click)="applyFilters()">Apply</button>
-    <button class="clear-button" (click)="clearFilters()">Clear All</button>
+    <div class="flex justify-between">
+      <button class="apply-button bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-500 text-sm sm:text-base" (click)="applyFilters()">Apply</button>
+      <button class="clear-button bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 text-sm sm:text-base" (click)="clearFilters()">Clear All</button>
+    </div>
   </div>
 
-  <!--# Organization Table -->
-  <div class="table-container">
-    <table>
-      <thead>
+  <!-- Organization Table -->
+  <div class="table-container rounded-lg shadow-lg overflow-auto mb-5">
+    <table class="min-w-full table-auto text-left text-sm block sm:table">
+      <thead class="bg-gray-50 hidden sm:table-header-group">
         <tr>
-          <th>No</th>
-          <th>Organization Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Head of the Organization</th>
-          <!-- <th>Location</th> -->
-          <th>User Count</th>
-          <th>Action</th>
+          <th class="px-2 py-3 text-gray-600">No</th>
+          <th class="px-2 py-3 text-gray-600">Organization Name</th>
+          <th class="px-2 py-3 text-gray-600">Email</th>
+          <th class="px-2 py-3 text-gray-600">Phone</th>
+          <th class="px-2 py-3 text-gray-600">Head of the Organization</th>
+          <th class="px-2 py-3 text-gray-600">User Count</th>
+          <th class="px-2 py-3 text-gray-600">Action</th>
         </tr>
       </thead>
-      <tbody>
-        <!--# Use *ngFor to iterate over the filtered organizations array -->
-        <tr *ngFor="let org of filteredOrganizations(); let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>
-            <div class="org-info">
-              <img
-                src="{{ org.logo }}"
-                alt="Organization Logo"
-                class="org-logo"
-              />
+      <tbody class="bg-white divide-y divide-gray-200 block sm:table-row-group">
+        <tr *ngFor="let org of filteredOrganizations(); let i = index" class="block sm:table-row">
+          <td class="px-2 py-4 block sm:table-cell max-sm:bg-green-200">#{{ i + 1 }}</td>
+          <td class="px-2 py-4 block sm:table-cell">
+            <div class="org-info flex items-center">
+              <img src="{{ org.logo }}" alt="Organization Logo" class="w-6 h-6 rounded-full mr-2" />
               <span>{{ org.name }}</span>
             </div>
           </td>
-          <td>{{ org.email }}</td>
-          <td>{{ org.phone }}</td>
-          <td>{{ org.head }}</td>
-          <!-- <td>{{ org.location }}</td> -->
-          <td>{{ org.userCount }}</td>
-          <td class="p-3 relative">
-            <button
-              class="text-lg text-gray-500 hover:text-gray-700"
-              (click)="toggleActionMenu(i)"
-            >
-              ...
-            </button>
-
+          <td class="px-2 py-4 block sm:table-cell">{{ org.email }}</td>
+          <td class="px-2 py-4 block sm:table-cell">{{ org.phone }}</td>
+          <td class="px-2 py-4 block sm:table-cell">{{ org.head }}</td>
+          <td class="px-2 py-4 block sm:table-cell">{{ org.userCount }}</td>
+          <td class="px-2 py-4 block sm:table-cell relative">
+            <button class="text-lg text-gray-500 hover:text-gray-700" (click)="toggleActionMenu(i)">...</button>
             <!-- Action Menu -->
-            <div
-              *ngIf="actionMenuIndex === i"
-              class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48 z-10 "
-            >
+            <div *ngIf="actionMenuIndex === i" class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48 z-10">
               <ul class="text-sm">
-                <li
-                  class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                  (click)="viewDetails(org)"
-                >
-                  <img
-                    src="../../../../assets/images/eye.png"
-                    alt="View Icon"
-                    class="w-4 h-4 mr-2"
-                  />
+                <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="viewDetails(org)">
+                  <img src="../../../../assets/images/eye.png" alt="View Icon" class="w-4 h-4 mr-2" />
                   <span>View Details</span>
                 </li>
-                <li
-                  class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer"
-                  (click)="editOrganization(org)"
-                >
-                  <img
-                    src="../../../../assets/images/pen.png"
-                    alt="Edit Icon"
-                    class="w-4 h-4 mr-2"
-                  />
+                <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="editOrganization(org)">
+                  <img src="../../../../assets/images/pen.png" alt="Edit Icon" class="w-4 h-4 mr-2" />
                   <span>Edit</span>
                 </li>
               </ul>
@@ -206,19 +167,22 @@
     </table>
   </div>
 
-  <!--# Pagination -->
-  <div class="pagination">
-    <button class="show-entries">Show 10</button>
-    <span>Showing 1 to 10 of 50 entries</span>
-    <div class="pagination-controls">
-      <button class="page-button">&lt;</button>
-      <button class="page-number active">1</button>
-      <button class="page-number">2</button>
-      <button class="page-number">3</button>
+  <!-- Pagination -->
+  <div class="pagination flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+    <button class="show-entries bg-gray-100 px-4 py-2 rounded-md">Show 10</button>
+    <span class="text-sm text-gray-600">Showing 1 to 10 of 50 entries</span>
+    <div class="pagination-controls flex items-center gap-2">
+      <button class="px-3 py-2 bg-gray-100 rounded-full">&lt;</button>
+      <button class="px-3 py-2 bg-pink-600 text-white rounded-full">1</button>
+      <button class="px-3 py-2 bg-gray-100 rounded-full">2</button>
+      <button class="px-3 py-2 bg-gray-100 rounded-full">3</button>
       <span>...</span>
-      <button class="page-number">10</button>
-      <button class="page-button">&gt;</button>
+      <button class="px-3 py-2 bg-gray-100 rounded-full">10</button>
+      <button class="px-3 py-2 bg-gray-100 rounded-full">&gt;</button>
     </div>
   </div>
 </div>
+
+
+
 

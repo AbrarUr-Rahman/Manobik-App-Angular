@@ -1,22 +1,23 @@
 <!--! Original code without responsive  -->
 <!-- <div *ngIf="showContent"> -->
   <div class="login-layout-container flex h-screen w-screen relative max-sm:flex-col max-sm:bg-pink-100">
-    <!-- Left side with image -->
-    <div class="left-side absolute sm:top-10 sm:left-0 rounded-[20px] bg-pink-100 flex justify-center items-center overflow-hidden h-[250px] sm:h-[940px] bottom-10 ">
-      <app-login-leftside></app-login-leftside>
-    </div>
-
+ 
     <!-- Right side with form content -->
     <div
-      class="right-side sm:h-[944px] h-[100px] w-[480px] absolute top-6 sm:top-10 -left-10 sm:left-[860px]  flex flex-col justify-start items-center px-10 py-5 rounded-[20px] opacity-100"
+      class="right-side sm:h-[944px]  sm:w-[480px] absolute top-6 sm:top-10 -left-10 sm:left-[860px]  flex flex-col justify-start items-center px-10 py-5 rounded-[20px] opacity-100 "
     >
-      <app-logo class="logo absolute top-5 left-40 sm:left-5 w-full sm:w-[138px] h-[48px] "></app-logo>
+      <app-logo class="logo absolute -top-7 sm:top-5 left-40 sm:left-5 w-full sm:w-[138px] h-[48px] "></app-logo>
       <ng-content></ng-content>
       <router-outlet></router-outlet>
       <div class="footer absolute bottom-[1px] w-full text-center text-gray-500 ">
         <app-footer></app-footer>
       </div>
     </div>
+       <!-- Left side with image -->
+       <div class="left-side absolute sm:top-10 sm:left-0 rounded-[20px] bg-pink-100 flex justify-center items-center overflow-hidden max-sm:w-full h-[130px]  sm:h-[940px]  -bottom-6 ">
+        <app-login-leftside></app-login-leftside>
+      </div>
+  
   </div>
 <!-- </div> -->
 <!--@ 

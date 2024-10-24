@@ -26,10 +26,12 @@ export class OrganizationListComponent {
 
 
   submitForm(){
-    this.router.navigate(['/fivew-form/create-form'])
+    this.router.navigate(['/organization/create-org'])
 
   }
-
+  navigateToCreateOrganization(){
+    this.router.navigate(['/organization/create-org'])
+  }
   //! Filter-related properties
   searchTerm: string = '';
   headFilter: string = '';
@@ -37,6 +39,7 @@ export class OrganizationListComponent {
   orgNameFilter: string = '';
   locationFilter: string = '';
   isFilterVisible: boolean = false;
+  
   
 
   // Property to track which action menu is open
