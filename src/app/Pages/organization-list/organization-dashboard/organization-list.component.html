@@ -97,7 +97,7 @@
   </div>
 
   <!-- Filter Modal -->
-  <div class="filter-modal fixed sm:absolute top-20 right-2 sm:right-5 sm:w-56 w-full bg-white shadow-lg p-4 rounded-lg z-10 max-w-xs"
+  <div class="filter-modal fixed max-sm:absolute top-20 right-2 sm:right-5 sm:w-56 w-full bg-white shadow-lg p-4 rounded-lg z-10 max-w-xs"
        [ngClass]="{ 'hidden': !isFilterVisible, 'block': isFilterVisible }">
     <div class="flex justify-between items-center mb-4">
       <h3 class="text-lg font-semibold">Filter Organizations</h3>
@@ -149,7 +149,7 @@
           <td class="px-2 py-4 block sm:table-cell relative">
             <button class="text-lg text-gray-500 hover:text-gray-700" (click)="toggleActionMenu(i)">...</button>
             <!-- Action Menu -->
-            <div *ngIf="actionMenuIndex === i" class="absolute bg-white shadow-md rounded-md mt-2 right-0 w-48 z-10">
+            <div *ngIf="actionMenuIndex === i" class="absolute max-sm:relative bg-white shadow-md rounded-md mt-2 right-0 w-48 z-10">
               <ul class="text-sm">
                 <li class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" (click)="viewDetails(org)">
                   <img src="../../../../assets/images/eye.png" alt="View Icon" class="w-4 h-4 mr-2" />

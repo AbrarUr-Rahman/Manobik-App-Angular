@@ -11,10 +11,10 @@ export class LoginLeftsideComponent {
   //! Faiyaz vai er teaching
   //  @Input() classes:string = ''
 
-  showContent = true; // Default is to show the content
+  showContent = true; 
 
   ngOnInit() {
-    this.checkWindowSize(); // Check window size when the component is initialized
+    this.checkWindowSize(); 
   }
 
   @HostListener('window:resize', ['$event'])
